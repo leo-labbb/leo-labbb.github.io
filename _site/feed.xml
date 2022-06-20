@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-06-21T00:23:27+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">leo-labbb DEVLOG</title><subtitle>awesome world</subtitle><author><name>이승호</name></author><entry><title type="html">github.io 블로그 첫 포스팅 :)</title><link href="http://localhost:4000/firstPost/" rel="alternate" type="text/html" title="github.io 블로그 첫 포스팅 :)" /><published>2022-06-20T00:00:00+09:00</published><updated>2022-06-20T00:00:00+09:00</updated><id>http://localhost:4000/firstPost</id><content type="html" xml:base="http://localhost:4000/firstPost/"><![CDATA[<p>내가 사이트로 블로그를 만들다니 너무 신기하다 :)<br />
+깃허브 블로그 만드는데 수많은 오류를 만났다,,<br />
+그래도 구글링덕분에 잘 해결된 것 같다!<br />
+일단 나만의 공간이 생겼으니 자질구레한 것이라도 기록하자 😆<br />
+remember!!!<br />
+ <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve</code></p>]]></content><author><name>이승호</name></author><category term="Blog" /><summary type="html"><![CDATA[Github Blog 게시글 테스트]]></summary></entry></feed>
