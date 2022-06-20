@@ -1,6 +1,6 @@
 ---
-title: 'github.io 블로그 첫 포스팅입니다'
-excerpt: 'Github Blog글을 처음 써보며.'
+title: 'github.io 블로그 첫 포스팅 :)'
+excerpt: 'Github Blog 게시글 테스트'
 
 categorise:
   - Blog
