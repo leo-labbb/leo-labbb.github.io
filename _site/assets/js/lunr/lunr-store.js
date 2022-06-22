@@ -10,4 +10,10 @@ var store = [{
         "tags": ["개발자 블로그","backend","첫 출근","Blog"],
         "url": "/til/",
         "teaser": null
+      },{
+        "title": "NoSQL이란?",
+        "excerpt":"NoSQL : NoSQL은 (non SQL 또는 non relational) 기존 RDBMs 형태의 관계형 데이터베이스가 아닌 다른 형태의 데이터 저장 기술을 의미하며, 관계형 데이터 베이스의 한계를 극복하기 위한 데이터 저장소의 새로운 형태로, 수평적 확장성을 갖고 있다. RDBMS가 클라이언트/서버 환경에 맞는 데이터 저장기술이라면, NoSQL은 클라우드 환경에 맞는 저장 기술이다. NoSQL의 특징 NoSQL은 RDBMS와는...","categories": [],
+        "tags": ["몽고DB","NoSQL","Blog"],
+        "url": "/til/",
+        "teaser": null
       }]
