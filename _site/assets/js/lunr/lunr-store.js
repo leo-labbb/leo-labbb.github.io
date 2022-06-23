@@ -16,4 +16,10 @@ var store = [{
         "tags": ["몽고DB","NoSQL","Blog"],
         "url": "/til/",
         "teaser": null
+      },{
+        "title": "젠킨스란 무엇일까? (feat. CI/CD)",
+        "excerpt":"젠킨스는 소프트웨어 개발 시 지속적으로 통합 서비스를 제공하는 툴입니다. CI(Continuous Integration) 툴 이라고 표현합니다. 젠킨스에 대해 알아보기 전에 우선 CI/CD에 대해 먼저 알아보자. CI/CD란? CI CI는 Continuous Integration 즉, 지속적인 통합이라는 의미다. 지속적인 통합이란, 어플리케이션의 새로운 코드 변경 사항이 정기적으로 빌드 및 테스트 되어 공유 레포지토리에 통합히는 것을 의미합니다. (가능하다면...","categories": [],
+        "tags": ["CI/CD","Jenkins","Pipeline","배포자동화"],
+        "url": "/til/",
+        "teaser": null
       }]
