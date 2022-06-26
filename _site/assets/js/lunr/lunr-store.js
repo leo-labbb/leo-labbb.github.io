@@ -22,4 +22,10 @@ var store = [{
         "tags": ["CI/CD","Jenkins","Pipeline","배포자동화"],
         "url": "/til/",
         "teaser": null
+      },{
+        "title": "npm run dev 에러 (feat. Node js)",
+        "excerpt":"npm run dev 에러를 만났다.     기본 모듈 시스템이 CommonJS인 Node.js에서  바벨을 통해 ESModule(+ 최신 ES문법)을 사용할 수 있도록 하고 있다.   package.json의 type:module을 추가 하는 건  프로젝트의 모듈 시스템만ESModule로 변경하는 것으로,  바벨은 적용되지 않았을 수 있습니다.   package.json 최상단에 “type”: “module”을 추가해서 해결했다!  ","categories": [],
+        "tags": ["Node js","Javascript"],
+        "url": "/til/",
+        "teaser": null
       }]

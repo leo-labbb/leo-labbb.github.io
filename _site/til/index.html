@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>젠킨스란 무엇일까? (feat. CI/CD) - leo-labbb DEVLOG</title>
-<meta name="description" content="Jenkins">
+<!-- begin _includes/seo.html --><title>npm run dev 에러 (feat. Node js) - leo-labbb DEVLOG</title>
+<meta name="description" content="SyntaxError: Cannot use import statement outside a module">
 
 
   <meta name="author" content="이승호">
@@ -22,11 +22,11 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="leo-labbb DEVLOG">
-<meta property="og:title" content="젠킨스란 무엇일까? (feat. CI/CD)">
+<meta property="og:title" content="npm run dev 에러 (feat. Node js)">
 <meta property="og:url" content="http://localhost:4000/til/">
 
 
-  <meta property="og:description" content="Jenkins">
+  <meta property="og:description" content="SyntaxError: Cannot use import statement outside a module">
 
 
 
@@ -34,7 +34,7 @@
 
 
 
-  <meta property="article:published_time" content="2022-06-23T00:00:00+09:00">
+  <meta property="article:published_time" content="2022-06-26T00:00:00+09:00">
 
 
 
@@ -250,19 +250,137 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="젠킨스란 무엇일까? (feat. CI/CD)">
-    <meta itemprop="description" content="Jenkins">
-    <meta itemprop="datePublished" content="2022-06-23T00:00:00+09:00">
+    <meta itemprop="headline" content="npm run dev 에러 (feat. Node js)">
+    <meta itemprop="description" content="SyntaxError: Cannot use import statement outside a module">
+    <meta itemprop="datePublished" content="2022-06-26T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/til/" class="u-url" itemprop="url">젠킨스란 무엇일까? (feat. CI/CD)
+            <a href="http://localhost:4000/til/" class="u-url" itemprop="url">npm run dev 에러 (feat. Node js)
 </a>
           </h1>
           
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <p>npm run dev 에러를 만났다.
+<img width="853" alt="스크린샷 2022-06-26 22 46 40" src="https://user-images.githubusercontent.com/92617810/175818748-77b09a4f-9538-474b-9acf-8a6b4811b472.png" />
+<img width="877" alt="스크린샷 2022-06-26 22 46 59" src="https://user-images.githubusercontent.com/92617810/175818759-00759346-4833-44e6-a7f8-83f0af159170.png" /></p>
+
+<p>기본 모듈 시스템이 CommonJS인 Node.js에서<br />
+바벨을 통해 ESModule(+ 최신 ES문법)을 사용할 수 있도록 하고 있다.</p>
+
+<p>package.json의 type:module을 추가 하는 건<br />
+프로젝트의 모듈 시스템만ESModule로 변경하는 것으로,<br />
+바벨은 적용되지 않았을 수 있습니다.</p>
+
+<p>package.json 최상단에 “type”: “module”을 추가해서 해결했다!</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#javascript" class="page__taxonomy-item p-category" rel="tag">Javascript</a><span class="sep">, </span>
+    
+      <a href="/tags/#node-js" class="page__taxonomy-item p-category" rel="tag">Node js</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-06-26T00:00:00+09:00">June 26, 2022</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=npm+run+dev+%EC%97%90%EB%9F%AC+%28feat.+Node+js%29%20http%3A%2F%2Flocalhost%3A4000%2Ftil%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Ftil%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Ftil%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/til/" class="pagination--pager" title="젠킨스란 무엇일까? (feat. CI/CD)
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">You may also enjoy</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/" rel="permalink">젠킨스란 무엇일까? (feat. CI/CD)
+</a>
+      
+    </h2>
+    
 
   <p class="page__meta">
     
@@ -283,139 +401,11 @@
   </p>
 
 
-        </header>
-      
-
-      <section class="page__content e-content" itemprop="text">
-        
-        <p>젠킨스는 소프트웨어 개발 시 지속적으로 통합 서비스를 제공하는 툴입니다. CI(Continuous Integration) 툴 이라고 표현합니다. 젠킨스에 대해 알아보기 전에 우선 CI/CD에 대해 먼저 알아보자.</p>
-
-<p>CI/CD란?</p>
-
-<p>CI
-CI는 Continuous Integration 즉, 지속적인 통합이라는 의미다.</p>
-
-<p>지속적인 통합이란,</p>
-
-<p>어플리케이션의 새로운 코드 변경 사항이 정기적으로 빌드 및 테스트 되어 공유 레포지토리에 통합히는 것을 의미합니다. (가능하다면 하루에 여러번까지)</p>
-
-<p>이러한 CI의 핵심 목표는 버그를 신속하게 찾아 해결하고, 소프트웨어의 품질을 개선하고, 새로운 업데이트의 검증 및 릴리즈의 시간을 단축시키는 것에 있습니다.</p>
-
-<p>CD
-CD란? 해석하자면, 지속적인 서비스 제공 혹은 지속적인 배포 라는 의미죠.</p>
-
-<p>Continuous Delivery는 공유 레포지토리로 자동으로 Release 하는 것, Continuous Deployment는 Production 레벨까지 자동으로 deploy 하는 것을 의미합니다.</p>
-
-<p>정리하자면, CI가 새로운 소스코드의 빌드, 테스트, 병합까지를 의미하였는데, CD는 개발자의 변경 사항이 레포지토리를 넘어, 고객의 프로덕션(Production) 환경까지 릴리즈 되는 것을 의미합니다.</p>
-
-<p>CI에서 예로 든 MSA와 같은 환경에서 Agile 방법론이 적용될 경우, 서비스의 사용자는 최대한 빠른 시간 내에 최신 버전의 Production을 제공받을 필요가 있습니다.</p>
-
-<p>이 때, 소프트웨어가 언제든지 신뢰 가능한 수준의 버전을 유지할 수 있도록 support 하는 것이 CD라고 할 수 있죠.</p>
-
-<p>이는 서비스의 개발팀과 비즈니스팀(영업, CS팀 등) 간의 커뮤니케이션 부족 문제를 해결해 줌으로써, 배포에 이르기까지의 노력을 최소한으로 단축시켜 준다는 Benefit을 제공합니다.</p>
-
-<p>이러한 CI/CD를 가능케 해주는 것이 바로 젠킨스입니다.</p>
-
-<p>젠킨스란?</p>
-
-<p>젠킨스와 같은 CI툴이 등장하기 전에는 일정시간마다 빌드를 실행하는 방식이 일반적이었습니다. 특히 개발자들이 당일 작성한 소스들의 커밋이 모두 끝난 심야 시간대에 이러한 빌드가 타이머에 의해 집중적으로 진행되었는데, 이를 Nightly-Build라고 했습니다. 하지만, 젠킨스는 정기적인 빌드에서 한발 나아가 SVN, Git과 같은 버전관리시스템과 연동하여 소스의 커밋을 감지하면 자동적으로 자동화 테스트가 포함된 빌드가 작동되도록 설정할 수 있습니다.</p>
-
-<p>젠킨스가 주는 이점
-개발중인 프로젝트에서 커밋은 매우 빈번히 일어나기 때문에 커밋 횟수만큼 빌드를 실행하는 것이 아니라 작업이 큐잉되어 자신이 실행될 차례를 기다리게 됩니다.</p>
-
-<p>코드의 변경과 함께 이뤄지는 이 같은 자동화된 빌드와 테스트 작업들은 다음과 같은 이점들을 가져다 줍니다.</p>
-
-<p>프로젝트 표준 컴파일 환경에서의 컴파일 오류 검출
-자동화 테스트 수행
-정적 코드 분석에 의한 코딩 규약 준수여부 체크
-프로파일링 툴을 이용한 소스 변경에 따른 성능 변화 감시
-결합 테스트 환경에 대한 배포작업
-이 외에도 젠킨스는 500여가지가 넘는 플러그인을 온라인으로 간단히 인스톨 할 수 있는 기능을 제공하고 있으며 파이썬과 같은 스크립트를 이용해 손쉽게 자신에게 필요한 기능을 추가 할 수 있습니다.</p>
-
-<p>각종 배치 작업의 간략화
-프로젝트 기간 중에 개발자들은 순수한 개발 작업 이외에 DB셋업이나 환경설정, Deploy작업과 같은 단순 작업에 시간과 노력을 들이는 경우가 빈번합니다. 데이터베이스의 구축, 어플리케이션 서버로의 Deploy, 라이브러리 릴리즈와 같이 이전에 CLI로 실행되던 작업들이 젠킨스 덕분에 웹 인터페이스로 손쉽게 가능해졌습니다.</p>
-
-<p>Build 자동화의 확립
-빌드 툴의 경우 Java는 maven과 gradle이 자리잡고 있으며, 이미 빌드 관리 툴을 이용해 프로젝트를 진행하고 있다면 젠킨스를 사용하지 않을 이유가 없습니다. 젠킨스와 연동하여 빌드 자동화를 통해 프로젝트 진행의 효율성을 높일 수 있습니다.</p>
-
-<p>자동화 테스트
-자동화 테스트는 젠킨스를 사용해야 하는 가장 큰 이유 중 하나이며, 사실상 자동화 테스트가 포함되지 않은 빌드는 CI자체가 불가능하다고 봐도 무방합니다. 젠킨스는 Subversion이나 Git과 같은 버전관리시스템과 연동하여 코드 변경을 감지하고 자동화 테스트를 수행하기 때문에 만약 개인이 미처 실시하지 못한 테스트가 있다 하여도 든든한 안전망이 되어줍니다. 제대로 테스트를 거치지 않은 코드를 커밋하게 되면 화난 젠킨스를 만나게 됩니다.</p>
-
-<p>코드 표준 준수여부 검사
-자동화 테스트와 마찬가지로 개인이 미처 실시하지 못한 코드 표준 준수 여부의 검사나 정적 분석을 통한 코드 품질 검사를 빌드 내부에서 수행함으로써 기술적 부채의 감소에도 크게 기여합니다.</p>
-
-<p>빌드 파이프라인 구성
-2개 이상의 모듈로 구성되는 레이어드 아키텍처가 적용 된 프로젝트에는 그에 따는 빌드 파이프라인 구성이 필요합니다. 예를 들면, 도메인 -&gt; 서비스 -&gt; UI와 같이 각 레이어의 참조 관계에 따라 순차적으로 빌드를 진행하지 않으면 안됩니다. 젠킨스에서는 이러한 빌드 파이프라인의 구성을 간단히 할 수 있으며, 스크립트를 통해서 매우 복잡한 제어까지도 가능합니다.</p>
-
-        
-      </section>
-
-      <footer class="page__meta">
-        
-        
-  
-
-
-  
-
-  <p class="page__taxonomy">
-    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
-    <span itemprop="keywords">
-    
-      <a href="/tags/#ci-cd" class="page__taxonomy-item p-category" rel="tag">CI/CD</a><span class="sep">, </span>
-    
-      <a href="/tags/#jenkins" class="page__taxonomy-item p-category" rel="tag">Jenkins</a><span class="sep">, </span>
-    
-      <a href="/tags/#pipeline" class="page__taxonomy-item p-category" rel="tag">Pipeline</a><span class="sep">, </span>
-    
-      <a href="/tags/#%EB%B0%B0%ED%8F%AC%EC%9E%90%EB%8F%99%ED%99%94" class="page__taxonomy-item p-category" rel="tag">배포자동화</a>
-    
-    </span>
-  </p>
-
-
-
-
-        
-
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-06-23T00:00:00+09:00">June 23, 2022</time></p>
-
-      </footer>
-
-      <section class="page__share">
-  
-    <h4 class="page__share-title">Share on</h4>
-  
-
-  <a href="https://twitter.com/intent/tweet?text=%EC%A0%A0%ED%82%A8%EC%8A%A4%EB%9E%80+%EB%AC%B4%EC%97%87%EC%9D%BC%EA%B9%8C%3F+%28feat.+CI%2FCD%29%20http%3A%2F%2Flocalhost%3A4000%2Ftil%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
-
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Ftil%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
-
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Ftil%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
-</section>
-
-
-      
-  <nav class="pagination">
-    
-      <a href="/til/" class="pagination--pager" title="NoSQL이란?
-">Previous</a>
-    
-    
-      <a href="#" class="pagination--pager disabled">Next</a>
-    
-  </nav>
-
-    </div>
-
-    
+    <p class="archive__item-excerpt" itemprop="description">Jenkins
+</p>
   </article>
+</div>
 
-  
-  
-    <div class="page__related">
-      <h2 class="page__related-title">You may also enjoy</h2>
-      <div class="grid__wrapper">
         
           
 
