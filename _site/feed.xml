@@ -1,4 +1,29 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-06-26T23:24:29+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">leo-labbb DEVLOG</title><subtitle>awesome world</subtitle><author><name>이승호</name></author><entry><title type="html">npm run dev 에러 (feat. Node js)</title><link href="http://localhost:4000/til/" rel="alternate" type="text/html" title="npm run dev 에러 (feat. Node js)" /><published>2022-06-26T00:00:00+09:00</published><updated>2022-06-26T00:00:00+09:00</updated><id>http://localhost:4000/til</id><content type="html" xml:base="http://localhost:4000/til/"><![CDATA[<p>npm run dev 에러를 만났다.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-07-06T23:26:14+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">leo-labbb DEVLOG</title><subtitle>awesome world</subtitle><author><name>이승호</name></author><entry><title type="html">ecosystem config js 용어 정리</title><link href="http://localhost:4000/til/" rel="alternate" type="text/html" title="ecosystem config js 용어 정리" /><published>2022-07-06T00:00:00+09:00</published><updated>2022-07-06T00:00:00+09:00</updated><id>http://localhost:4000/til</id><content type="html" xml:base="http://localhost:4000/til/"><![CDATA[<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>module.exports = {
+    apps: [
+        {
+            name: 'nodejs-sequelize-pm2', // pm2 name
+            script: './server.js', // // 앱 실행 스크립트
+            instances: 3, // 클러스터 모드 사용 시 생성할 인스턴스 수
+            exec_mode: 'cluster', // fork, cluster 모드 중 선택
+            (   exec_mode: "cluster", //CPU 사용을 위한 클러스터 모드 )
+            merge_logs: true, // 클러스터 모드 사용 시 각 클러스터에서 생성되는 로그를 한 파일로 합쳐준다.
+            autorestart: true, // 프로세스 실패 시 자동으로 재시작할지 선택
+            watch: false, // 파일이 변경되었을 때 재시작 할지 선택
+            // max_memory_restart: "512M", // 프로그램의 메모리 크기가 일정 크기 이상이 되면 재시작한다.
+            env: {
+                // 개발 환경설정
+                NODE_ENV: 'development',
+            },
+            env_production: {
+                // 운영 환경설정 (--env production 옵션으로 지정할 수 있다.)
+                NODE_ENV: 'production',
+            }
+        },
+    ]
+};
+</code></pre></div></div>
+
+<p>https://velog.io/@altmshfkgudtjr/PM2-Node.js-%EB%AC%B4%EC%A4%91%EB%8B%A8-%EC%84%9C%EB%B9%84%EC%8A%A4</p>]]></content><author><name>이승호</name></author><category term="ecosystem" /><category term="config" /></entry><entry><title type="html">npm run dev 에러 (feat. Node js)</title><link href="http://localhost:4000/til/" rel="alternate" type="text/html" title="npm run dev 에러 (feat. Node js)" /><published>2022-06-26T00:00:00+09:00</published><updated>2022-06-26T00:00:00+09:00</updated><id>http://localhost:4000/til</id><content type="html" xml:base="http://localhost:4000/til/"><![CDATA[<p>npm run dev 에러를 만났다.
 <img width="853" alt="스크린샷 2022-06-26 22 46 40" src="https://user-images.githubusercontent.com/92617810/175818748-77b09a4f-9538-474b-9acf-8a6b4811b472.png" />
 <img width="877" alt="스크린샷 2022-06-26 22 46 59" src="https://user-images.githubusercontent.com/92617810/175818759-00759346-4833-44e6-a7f8-83f0af159170.png" /></p>
 

@@ -28,4 +28,10 @@ var store = [{
         "tags": ["Node js","Javascript"],
         "url": "/til/",
         "teaser": null
+      },{
+        "title": "ecosystem config js 용어 정리",
+        "excerpt":"module.exports = { apps: [ { name: 'nodejs-sequelize-pm2', // pm2 name script: './server.js', // // 앱 실행 스크립트 instances: 3, // 클러스터 모드 사용 시 생성할 인스턴스 수 exec_mode: 'cluster', // fork, cluster 모드 중 선택 ( exec_mode: \"cluster\", //CPU 사용을 위한 클러스터 모드 ) merge_logs: true, // 클러스터 모드...","categories": [],
+        "tags": ["ecosystem","config"],
+        "url": "/til/",
+        "teaser": null
       }]

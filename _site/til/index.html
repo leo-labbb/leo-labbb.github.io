@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>npm run dev 에러 (feat. Node js) - leo-labbb DEVLOG</title>
-<meta name="description" content="SyntaxError: Cannot use import statement outside a module">
+<!-- begin _includes/seo.html --><title>ecosystem config js 용어 정리 - leo-labbb DEVLOG</title>
+<meta name="description" content="awesome world">
 
 
   <meta name="author" content="이승호">
@@ -22,11 +22,11 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="leo-labbb DEVLOG">
-<meta property="og:title" content="npm run dev 에러 (feat. Node js)">
+<meta property="og:title" content="ecosystem config js 용어 정리">
 <meta property="og:url" content="http://localhost:4000/til/">
 
 
-  <meta property="og:description" content="SyntaxError: Cannot use import statement outside a module">
+  <meta property="og:description" content="awesome world">
 
 
 
@@ -34,7 +34,7 @@
 
 
 
-  <meta property="article:published_time" content="2022-06-26T00:00:00+09:00">
+  <meta property="article:published_time" content="2022-07-06T00:00:00+09:00">
 
 
 
@@ -250,16 +250,16 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="npm run dev 에러 (feat. Node js)">
-    <meta itemprop="description" content="SyntaxError: Cannot use import statement outside a module">
-    <meta itemprop="datePublished" content="2022-06-26T00:00:00+09:00">
+    <meta itemprop="headline" content="ecosystem config js 용어 정리">
+    <meta itemprop="description" content="">
+    <meta itemprop="datePublished" content="2022-07-06T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/til/" class="u-url" itemprop="url">npm run dev 에러 (feat. Node js)
+            <a href="http://localhost:4000/til/" class="u-url" itemprop="url">ecosystem config js 용어 정리
 </a>
           </h1>
           
@@ -288,18 +288,32 @@
 
       <section class="page__content e-content" itemprop="text">
         
-        <p>npm run dev 에러를 만났다.
-<img width="853" alt="스크린샷 2022-06-26 22 46 40" src="https://user-images.githubusercontent.com/92617810/175818748-77b09a4f-9538-474b-9acf-8a6b4811b472.png" />
-<img width="877" alt="스크린샷 2022-06-26 22 46 59" src="https://user-images.githubusercontent.com/92617810/175818759-00759346-4833-44e6-a7f8-83f0af159170.png" /></p>
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>module.exports = {
+    apps: [
+        {
+            name: 'nodejs-sequelize-pm2', // pm2 name
+            script: './server.js', // // 앱 실행 스크립트
+            instances: 3, // 클러스터 모드 사용 시 생성할 인스턴스 수
+            exec_mode: 'cluster', // fork, cluster 모드 중 선택
+            (   exec_mode: "cluster", //CPU 사용을 위한 클러스터 모드 )
+            merge_logs: true, // 클러스터 모드 사용 시 각 클러스터에서 생성되는 로그를 한 파일로 합쳐준다.
+            autorestart: true, // 프로세스 실패 시 자동으로 재시작할지 선택
+            watch: false, // 파일이 변경되었을 때 재시작 할지 선택
+            // max_memory_restart: "512M", // 프로그램의 메모리 크기가 일정 크기 이상이 되면 재시작한다.
+            env: {
+                // 개발 환경설정
+                NODE_ENV: 'development',
+            },
+            env_production: {
+                // 운영 환경설정 (--env production 옵션으로 지정할 수 있다.)
+                NODE_ENV: 'production',
+            }
+        },
+    ]
+};
+</code></pre></div></div>
 
-<p>기본 모듈 시스템이 CommonJS인 Node.js에서<br />
-바벨을 통해 ESModule(+ 최신 ES문법)을 사용할 수 있도록 하고 있다.</p>
-
-<p>package.json의 type:module을 추가 하는 건<br />
-프로젝트의 모듈 시스템만ESModule로 변경하는 것으로,<br />
-바벨은 적용되지 않았을 수 있습니다.</p>
-
-<p>package.json 최상단에 “type”: “module”을 추가해서 해결했다!</p>
+<p>https://velog.io/@altmshfkgudtjr/PM2-Node.js-%EB%AC%B4%EC%A4%91%EB%8B%A8-%EC%84%9C%EB%B9%84%EC%8A%A4</p>
 
         
       </section>
@@ -316,9 +330,9 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#javascript" class="page__taxonomy-item p-category" rel="tag">Javascript</a><span class="sep">, </span>
+      <a href="/tags/#config" class="page__taxonomy-item p-category" rel="tag">config</a><span class="sep">, </span>
     
-      <a href="/tags/#node-js" class="page__taxonomy-item p-category" rel="tag">Node js</a>
+      <a href="/tags/#ecosystem" class="page__taxonomy-item p-category" rel="tag">ecosystem</a>
     
     </span>
   </p>
@@ -328,7 +342,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-06-26T00:00:00+09:00">June 26, 2022</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-07-06T00:00:00+09:00">July 6, 2022</time></p>
 
       </footer>
 
@@ -337,7 +351,7 @@
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=npm+run+dev+%EC%97%90%EB%9F%AC+%28feat.+Node+js%29%20http%3A%2F%2Flocalhost%3A4000%2Ftil%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=ecosystem+config+js+%EC%9A%A9%EC%96%B4+%EC%A0%95%EB%A6%AC%20http%3A%2F%2Flocalhost%3A4000%2Ftil%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
   <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Ftil%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
@@ -348,7 +362,7 @@
       
   <nav class="pagination">
     
-      <a href="/til/" class="pagination--pager" title="젠킨스란 무엇일까? (feat. CI/CD)
+      <a href="/til/" class="pagination--pager" title="npm run dev 에러 (feat. Node js)
 ">Previous</a>
     
     
@@ -366,6 +380,46 @@
     <div class="page__related">
       <h2 class="page__related-title">You may also enjoy</h2>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/" rel="permalink">npm run dev 에러 (feat. Node js)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">SyntaxError: Cannot use import statement outside a module
+</p>
+  </article>
+</div>
+
         
           
 
@@ -482,46 +536,6 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">달콤한 9개월 간의 여정
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/firstPost/" rel="permalink">github.io 블로그 첫 포스팅 :)
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          less than 1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">Github Blog 게시글 테스트
 </p>
   </article>
 </div>
