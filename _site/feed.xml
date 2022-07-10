@@ -1,4 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-07-06T23:26:14+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">leo-labbb DEVLOG</title><subtitle>awesome world</subtitle><author><name>이승호</name></author><entry><title type="html">ecosystem config js 용어 정리</title><link href="http://localhost:4000/til/" rel="alternate" type="text/html" title="ecosystem config js 용어 정리" /><published>2022-07-06T00:00:00+09:00</published><updated>2022-07-06T00:00:00+09:00</updated><id>http://localhost:4000/til</id><content type="html" xml:base="http://localhost:4000/til/"><![CDATA[<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>module.exports = {
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-07-10T23:51:59+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">leo-labbb DEVLOG</title><subtitle>awesome world</subtitle><author><name>이승호</name></author><entry><title type="html">moment.js를 이용해 날짜 계산하는 방법</title><link href="http://localhost:4000/til/" rel="alternate" type="text/html" title="moment.js를 이용해 날짜 계산하는 방법" /><published>2022-07-10T00:00:00+09:00</published><updated>2022-07-10T00:00:00+09:00</updated><id>http://localhost:4000/til</id><content type="html" xml:base="http://localhost:4000/til/"><![CDATA[<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[Node.js] moment.js로 날짜(date)관련 작업을 쉽게하기
+</code></pre></div></div>
+
+<p><a href="https://hanswsw.tistory.com/5">https://hanswsw.tistory.com/5</a></p>
+
+<p>[[Node.js] moment.js로 날짜(date)관련 작업을 쉽게하기</p>
+
+<p>JS에서 날짜 관련 작업을 할 때, 아마 가장 유명하고 유용하게 사용되어지는 라이브러리는 moment.js가 아닐까 싶습니다. JS에 기본적으로 내장되어있는 Date개체를 불러와서, 날짜 관련 작업을 해</p>
+
+<p>hanswsw.tistory.com](https://hanswsw.tistory.com/5)</p>
+
+<h3 id="moment-날짜계산">[moment] 날짜계산</h3>
+
+<p><a href="https://romeoh.tistory.com/324">https://romeoh.tistory.com/324</a></p>]]></content><author><name>이승호</name></author><category term="moment js" /><category term="날짜계산" /></entry><entry><title type="html">ecosystem config js 용어 정리</title><link href="http://localhost:4000/til/" rel="alternate" type="text/html" title="ecosystem config js 용어 정리" /><published>2022-07-06T00:00:00+09:00</published><updated>2022-07-06T00:00:00+09:00</updated><id>http://localhost:4000/til</id><content type="html" xml:base="http://localhost:4000/til/"><![CDATA[<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>module.exports = {
     apps: [
         {
             name: 'nodejs-sequelize-pm2', // pm2 name

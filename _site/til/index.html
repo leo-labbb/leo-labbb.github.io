@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>ecosystem config js 용어 정리 - leo-labbb DEVLOG</title>
+<!-- begin _includes/seo.html --><title>moment.js를 이용해 날짜 계산하는 방법 - leo-labbb DEVLOG</title>
 <meta name="description" content="awesome world">
 
 
@@ -22,7 +22,7 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="leo-labbb DEVLOG">
-<meta property="og:title" content="ecosystem config js 용어 정리">
+<meta property="og:title" content="moment.js를 이용해 날짜 계산하는 방법">
 <meta property="og:url" content="http://localhost:4000/til/">
 
 
@@ -34,7 +34,7 @@
 
 
 
-  <meta property="article:published_time" content="2022-07-06T00:00:00+09:00">
+  <meta property="article:published_time" content="2022-07-10T00:00:00+09:00">
 
 
 
@@ -250,16 +250,16 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="ecosystem config js 용어 정리">
+    <meta itemprop="headline" content="moment.js를 이용해 날짜 계산하는 방법">
     <meta itemprop="description" content="">
-    <meta itemprop="datePublished" content="2022-07-06T00:00:00+09:00">
+    <meta itemprop="datePublished" content="2022-07-10T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/til/" class="u-url" itemprop="url">ecosystem config js 용어 정리
+            <a href="http://localhost:4000/til/" class="u-url" itemprop="url">moment.js를 이용해 날짜 계산하는 방법
 </a>
           </h1>
           
@@ -288,32 +288,20 @@
 
       <section class="page__content e-content" itemprop="text">
         
-        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>module.exports = {
-    apps: [
-        {
-            name: 'nodejs-sequelize-pm2', // pm2 name
-            script: './server.js', // // 앱 실행 스크립트
-            instances: 3, // 클러스터 모드 사용 시 생성할 인스턴스 수
-            exec_mode: 'cluster', // fork, cluster 모드 중 선택
-            (   exec_mode: "cluster", //CPU 사용을 위한 클러스터 모드 )
-            merge_logs: true, // 클러스터 모드 사용 시 각 클러스터에서 생성되는 로그를 한 파일로 합쳐준다.
-            autorestart: true, // 프로세스 실패 시 자동으로 재시작할지 선택
-            watch: false, // 파일이 변경되었을 때 재시작 할지 선택
-            // max_memory_restart: "512M", // 프로그램의 메모리 크기가 일정 크기 이상이 되면 재시작한다.
-            env: {
-                // 개발 환경설정
-                NODE_ENV: 'development',
-            },
-            env_production: {
-                // 운영 환경설정 (--env production 옵션으로 지정할 수 있다.)
-                NODE_ENV: 'production',
-            }
-        },
-    ]
-};
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[Node.js] moment.js로 날짜(date)관련 작업을 쉽게하기
 </code></pre></div></div>
 
-<p>https://velog.io/@altmshfkgudtjr/PM2-Node.js-%EB%AC%B4%EC%A4%91%EB%8B%A8-%EC%84%9C%EB%B9%84%EC%8A%A4</p>
+<p><a href="https://hanswsw.tistory.com/5">https://hanswsw.tistory.com/5</a></p>
+
+<p>[[Node.js] moment.js로 날짜(date)관련 작업을 쉽게하기</p>
+
+<p>JS에서 날짜 관련 작업을 할 때, 아마 가장 유명하고 유용하게 사용되어지는 라이브러리는 moment.js가 아닐까 싶습니다. JS에 기본적으로 내장되어있는 Date개체를 불러와서, 날짜 관련 작업을 해</p>
+
+<p>hanswsw.tistory.com](https://hanswsw.tistory.com/5)</p>
+
+<h3 id="moment-날짜계산">[moment] 날짜계산</h3>
+
+<p><a href="https://romeoh.tistory.com/324">https://romeoh.tistory.com/324</a></p>
 
         
       </section>
@@ -330,9 +318,9 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#config" class="page__taxonomy-item p-category" rel="tag">config</a><span class="sep">, </span>
+      <a href="/tags/#moment-js" class="page__taxonomy-item p-category" rel="tag">moment js</a><span class="sep">, </span>
     
-      <a href="/tags/#ecosystem" class="page__taxonomy-item p-category" rel="tag">ecosystem</a>
+      <a href="/tags/#%EB%82%A0%EC%A7%9C%EA%B3%84%EC%82%B0" class="page__taxonomy-item p-category" rel="tag">날짜계산</a>
     
     </span>
   </p>
@@ -342,7 +330,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-07-06T00:00:00+09:00">July 6, 2022</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-07-10T00:00:00+09:00">July 10, 2022</time></p>
 
       </footer>
 
@@ -351,7 +339,7 @@
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=ecosystem+config+js+%EC%9A%A9%EC%96%B4+%EC%A0%95%EB%A6%AC%20http%3A%2F%2Flocalhost%3A4000%2Ftil%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=moment.js%EB%A5%BC+%EC%9D%B4%EC%9A%A9%ED%95%B4+%EB%82%A0%EC%A7%9C+%EA%B3%84%EC%82%B0%ED%95%98%EB%8A%94+%EB%B0%A9%EB%B2%95%20http%3A%2F%2Flocalhost%3A4000%2Ftil%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
   <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Ftil%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
@@ -362,7 +350,7 @@
       
   <nav class="pagination">
     
-      <a href="/til/" class="pagination--pager" title="npm run dev 에러 (feat. Node js)
+      <a href="/til/" class="pagination--pager" title="ecosystem config js 용어 정리
 ">Previous</a>
     
     
@@ -380,6 +368,46 @@
     <div class="page__related">
       <h2 class="page__related-title">You may also enjoy</h2>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/" rel="permalink">ecosystem config js 용어 정리
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
         
           
 
@@ -496,46 +524,6 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">몽고DB야 안녕!
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/til/" rel="permalink">백엔드 개발자 첫 출근 후기 (feat. Node js)
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">달콤한 9개월 간의 여정
 </p>
   </article>
 </div>
