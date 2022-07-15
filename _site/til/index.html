@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>moment.js를 이용해 날짜 계산하는 방법 - leo-labbb DEVLOG</title>
+<!-- begin _includes/seo.html --><title>프로젝트에 eslint-airbnb 적용해 나만의 eslint 규칙 만들기 - leo-labbb DEVLOG</title>
 <meta name="description" content="awesome world">
 
 
@@ -22,7 +22,7 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="leo-labbb DEVLOG">
-<meta property="og:title" content="moment.js를 이용해 날짜 계산하는 방법">
+<meta property="og:title" content="프로젝트에 eslint-airbnb 적용해 나만의 eslint 규칙 만들기">
 <meta property="og:url" content="http://localhost:4000/til/">
 
 
@@ -34,7 +34,7 @@
 
 
 
-  <meta property="article:published_time" content="2022-07-10T00:00:00+09:00">
+  <meta property="article:published_time" content="2022-07-15T00:00:00+09:00">
 
 
 
@@ -250,16 +250,16 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="moment.js를 이용해 날짜 계산하는 방법">
+    <meta itemprop="headline" content="프로젝트에 eslint-airbnb 적용해 나만의 eslint 규칙 만들기">
     <meta itemprop="description" content="">
-    <meta itemprop="datePublished" content="2022-07-10T00:00:00+09:00">
+    <meta itemprop="datePublished" content="2022-07-15T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/til/" class="u-url" itemprop="url">moment.js를 이용해 날짜 계산하는 방법
+            <a href="http://localhost:4000/til/" class="u-url" itemprop="url">프로젝트에 eslint-airbnb 적용해 나만의 eslint 규칙 만들기
 </a>
           </h1>
           
@@ -288,20 +288,43 @@
 
       <section class="page__content e-content" itemprop="text">
         
-        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[Node.js] moment.js로 날짜(date)관련 작업을 쉽게하기
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm i --save-dev eslint-config-airbnb-base eslint-plugin-import
+npm i --save-dev eslint-config-prettier
 </code></pre></div></div>
 
-<p><a href="https://hanswsw.tistory.com/5">https://hanswsw.tistory.com/5</a></p>
+<p>우선 npm i를 이용해 위와 같이 eslint-airbnb와 config-prettier를 설치해줍니다.</p>
 
-<p>[[Node.js] moment.js로 날짜(date)관련 작업을 쉽게하기</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>module.exports = {
+  env: {
+    commonjs: true,
+    es2021: true,
+    node: true,
+  },
+  extends: ["airbnb-base", "prettier"],
+  parserOptions: {
+    ecmaVersion: 12,
+  },
+  rules: {
+    "new-cap": 0,
+    "max-len": 0,
+    "valid-jsdoc": 0,
+    "require-jsdoc": 1,
+    "no-unused-vars": 1,
+    "no-trailing-spaces": 0,
+    "no-undef": 0,
+    "spaced-comment": 0,
+    "prefer-const": 0,
+  },
+};
+</code></pre></div></div>
 
-<p>JS에서 날짜 관련 작업을 할 때, 아마 가장 유명하고 유용하게 사용되어지는 라이브러리는 moment.js가 아닐까 싶습니다. JS에 기본적으로 내장되어있는 Date개체를 불러와서, 날짜 관련 작업을 해</p>
+<p>그 다음 .eslintrc.js 파일을 최상단에 위치시켜 생성해주고,</p>
 
-<p>hanswsw.tistory.com](https://hanswsw.tistory.com/5)</p>
+<p>위 파일과 같이 입력해줍니다.</p>
 
-<h3 id="moment-날짜계산">[moment] 날짜계산</h3>
+<p>그 후 나타나는 오류들은 fix ~~ 로 입맛에 맞게 수정해주면 eslint-airbnb를 적용해 나만의 eslint 규칙을 만들어 프로젝트를 일관되게 유지할 수 있습니다!</p>
 
-<p><a href="https://romeoh.tistory.com/324">https://romeoh.tistory.com/324</a></p>
+<p>만약 팀원들과 함께 하는 프로젝트라면 규칙을 자동 적용함으로써 조금 더 일관된 코드 스타일을 유지하며 프로젝트를 진행할 수 있을 것입니다 :)</p>
 
         
       </section>
@@ -318,9 +341,9 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#moment-js" class="page__taxonomy-item p-category" rel="tag">moment js</a><span class="sep">, </span>
+      <a href="/tags/#eslint" class="page__taxonomy-item p-category" rel="tag">eslint</a><span class="sep">, </span>
     
-      <a href="/tags/#%EB%82%A0%EC%A7%9C%EA%B3%84%EC%82%B0" class="page__taxonomy-item p-category" rel="tag">날짜계산</a>
+      <a href="/tags/#eslint-airbnb" class="page__taxonomy-item p-category" rel="tag">eslint-airbnb</a>
     
     </span>
   </p>
@@ -330,7 +353,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-07-10T00:00:00+09:00">July 10, 2022</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-07-15T00:00:00+09:00">July 15, 2022</time></p>
 
       </footer>
 
@@ -339,7 +362,7 @@
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=moment.js%EB%A5%BC+%EC%9D%B4%EC%9A%A9%ED%95%B4+%EB%82%A0%EC%A7%9C+%EA%B3%84%EC%82%B0%ED%95%98%EB%8A%94+%EB%B0%A9%EB%B2%95%20http%3A%2F%2Flocalhost%3A4000%2Ftil%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%97%90+eslint-airbnb+%EC%A0%81%EC%9A%A9%ED%95%B4+%EB%82%98%EB%A7%8C%EC%9D%98+eslint+%EA%B7%9C%EC%B9%99+%EB%A7%8C%EB%93%A4%EA%B8%B0%20http%3A%2F%2Flocalhost%3A4000%2Ftil%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
   <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Ftil%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
@@ -350,7 +373,7 @@
       
   <nav class="pagination">
     
-      <a href="/til/" class="pagination--pager" title="ecosystem config js 용어 정리
+      <a href="/til/" class="pagination--pager" title="moment.js를 이용해 날짜 계산하는 방법
 ">Previous</a>
     
     
@@ -368,6 +391,46 @@
     <div class="page__related">
       <h2 class="page__related-title">You may also enjoy</h2>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/" rel="permalink">moment.js를 이용해 날짜 계산하는 방법
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
         
           
 
@@ -484,46 +547,6 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">Jenkins
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/til/" rel="permalink">NoSQL이란?
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          2 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">몽고DB야 안녕!
 </p>
   </article>
 </div>

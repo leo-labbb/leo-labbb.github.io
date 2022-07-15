@@ -40,4 +40,10 @@ var store = [{
         "tags": ["moment js","날짜계산"],
         "url": "/til/",
         "teaser": null
+      },{
+        "title": "프로젝트에 eslint-airbnb 적용해 나만의 eslint 규칙 만들기",
+        "excerpt":"npm i --save-dev eslint-config-airbnb-base eslint-plugin-import npm i --save-dev eslint-config-prettier 우선 npm i를 이용해 위와 같이 eslint-airbnb와 config-prettier를 설치해줍니다. module.exports = { env: { commonjs: true, es2021: true, node: true, }, extends: [\"airbnb-base\", \"prettier\"], parserOptions: { ecmaVersion: 12, }, rules: { \"new-cap\": 0, \"max-len\": 0, \"valid-jsdoc\": 0, \"require-jsdoc\": 1, \"no-unused-vars\": 1,...","categories": [],
+        "tags": ["eslint","eslint-airbnb"],
+        "url": "/til/",
+        "teaser": null
       }]
