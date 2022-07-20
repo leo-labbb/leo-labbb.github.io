@@ -1,0 +1,38 @@
+I"<p>*control + return</p>
+
+<ul>
+  <li>
+    <p>(Navigator에서) 새 파일 생성하기 option(alt) + F12 터미널창 열기</p>
+  </li>
+  <li>
+    <p>command +</p>
+
+    <ul>
+      <li>preference 열기</li>
+    </ul>
+  </li>
+  <li>
+    <p>command + delete</p>
+
+    <ul>
+      <li>한 줄 라인 없애기</li>
+    </ul>
+  </li>
+</ul>
+
+<p>command + return
+ 현재줄에서 커서 유지하면서 다음줄 새로 생성하기</p>
+
+<p>shift(command) + return 
+ 아래로 새로운 라인으로 줄바꿈하기</p>
+
+<p>command + option(alt) +  return 
+ 윗줄로 새로운 라인으로 줄바꿈하기</p>
+
+<p>control + shift + J
+ 라인 합치기</p>
+
+<p>command + d 한 줄 복사하기  command + shift + U 대소문자 토글하기  option(alt) + 방향키(상하) selection 지정하기( 방향키 위: expand, 방향키 아래: shrink )  command + option + T  emmet의 코드 wrap abbreviation  control + option(alt) 
++ 방향키(좌우) emmet의 moving next or previous edit point   shift + F6 file rename       commnand + shift + delete(fn) 코드 선택적 remove (노트북에선 fn키 누르고 진행) shift + option(alt)  + 방향키(상하)  코드 라인 상하로 옮기기  shift + command  + 방향키(상하)  코드 라인 소스포맷팅하면서 상하로 옮기기  command + L  Go to the Line  command + shift + 8 colum selection mode (에밋의 멀티 셀렉션 모드와 같음)  opt(alt) + 드래그 colum selection mode command + 드래그 드래그 한 코드를 마우스로 원하는 위치로 이동시키기  command + /  라인 한줄씩 주석처리하기  command + opt(alt) + /  드래그 섹션이나 해당 커서섹션만 주석처리하기  opt(alt) + /  Remember previous word   opt(alt) + shift + / Remember next word  shift + control + J  라인 합치기  command + shift + v  최근 복사했던 목록 보여주기  command + shift + [,]  열린 파일간의 이동  control + k  커서 라인에서 커서 뒤의 코드만 모두 지움   control + g 드래그한 블럭과 일치 코드 블럭만 선택하기(계속 누르면 같은
+ 코드 찾아서  선택)  command + control + g 드래그한 블럭과 일치하는 코드 모두 선택하기  command + shift + O project내의 파일 바로 찾기  command + opt(alt) + O   symbol 찾기 ( 코드명, 기호등등 )  control + tab  switcher  command + E  최근 열었던 파일 항목 보여주기       comand + shift + U         영문 텍스트 대문자를 소문자로 소문자를 대문자로 변환하기       comand + . (마침표)         코드내에서 폴딩 기능 사용하기      command + opt + L          소스 포맷하기       control + shift + J          소스 드래그 영역 싱글라인으로 만들기       control + shift + A          Emmet 기능 중에 tag surround 기능      command + shift + del          소스 태그 선택적 삭제하기       command + opt + 좌,우 방향키           Edit  Point 이동하기       control + opt + N          파일 생성하기       cotrol + opt + shift + 상,하 방향키          소스상에서 수정,편집한 내용으로 이동(점프)하기</p>
+:ET
