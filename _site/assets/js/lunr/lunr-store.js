@@ -48,7 +48,7 @@ var store = [{
         "teaser": null
       },{
         "title": "[Mac] webStorm 단축키 정리",
-        "excerpt":"control + return (Navigator에서) 새 파일 생성하기 option(alt) + F12 터미널창 열기 command + preference 열기 command + delete 한 줄 라인 없애기 command + return 현재줄에서 커서 유지하면서 다음줄 새로 생성하기 shift(command) + return  아래로 새로운 라인으로 줄바꿈하기 command + option(alt) +  return  윗줄로 새로운 라인으로 줄바꿈하기 control + shift + J 라인 합치기 command...","categories": [],
+        "excerpt":"control + return (Navigator에서) 새 파일 생성하기 option(alt) + F12 터미널창 열기 command + preference 열기 command + delete 한 줄 라인 없애기 / command + return 현재줄에서 커서 유지하면서 다음줄 새로 생성하기 shift(command) + return  아래로 새로운 라인으로 줄바꿈하기 command + option(alt) +  return  윗줄로 새로운 라인으로 줄바꿈하기 control + shift + J 라인 합치기...","categories": [],
         "tags": ["webstorm","webstorm 단축키"],
         "url": "/til/",
         "teaser": null
