@@ -52,4 +52,10 @@ var store = [{
         "tags": ["webstorm","webstorm 단축키"],
         "url": "/til/",
         "teaser": null
+      },{
+        "title": "HTTP 헤더의 크기제한이란?",
+        "excerpt":"HTTP 통신을 사용하다 보면 헤더에 정보를 담아 보내는 일이 빈번하다. HTTP 헤더에는 크기제한이 있는가에 대한 의문이 들었다. 서치 결과 답은 상황에 따라 다르다는 것이다. 기본적으로 HTTP RFC에는 헤더의 최대 크기 제한은 없지만 우리가 사용하는 웹서버 소프트웨어에서 크기를 제한하고 있다. Here is the limit of most popular web server Web Server...","categories": [],
+        "tags": ["HTTP","HTTP 헤더"],
+        "url": "/til/",
+        "teaser": null
       }]

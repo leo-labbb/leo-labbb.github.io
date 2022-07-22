@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[Mac] webStorm 단축키 정리 - leo-labbb DEVLOG</title>
-<meta name="description" content="까먹었을 때 다시 보는 용도">
+<!-- begin _includes/seo.html --><title>HTTP 헤더의 크기제한이란? - leo-labbb DEVLOG</title>
+<meta name="description" content="awesome world">
 
 
   <meta name="author" content="이승호">
@@ -22,11 +22,11 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="leo-labbb DEVLOG">
-<meta property="og:title" content="[Mac] webStorm 단축키 정리">
+<meta property="og:title" content="HTTP 헤더의 크기제한이란?">
 <meta property="og:url" content="http://localhost:4000/til/">
 
 
-  <meta property="og:description" content="까먹었을 때 다시 보는 용도">
+  <meta property="og:description" content="awesome world">
 
 
 
@@ -34,7 +34,7 @@
 
 
 
-  <meta property="article:published_time" content="2022-07-20T00:00:00+09:00">
+  <meta property="article:published_time" content="2022-07-22T00:00:00+09:00">
 
 
 
@@ -250,19 +250,165 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="[Mac] webStorm 단축키 정리">
-    <meta itemprop="description" content="까먹었을 때 다시 보는 용도">
-    <meta itemprop="datePublished" content="2022-07-20T00:00:00+09:00">
+    <meta itemprop="headline" content="HTTP 헤더의 크기제한이란?">
+    <meta itemprop="description" content="">
+    <meta itemprop="datePublished" content="2022-07-22T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/til/" class="u-url" itemprop="url">[Mac] webStorm 단축키 정리
+            <a href="http://localhost:4000/til/" class="u-url" itemprop="url">HTTP 헤더의 크기제한이란?
 </a>
           </h1>
           
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <h3 id="http-통신을-사용하다-보면-헤더에-정보를-담아-보내는-일이-빈번하다">HTTP 통신을 사용하다 보면 헤더에 정보를 담아 보내는 일이 빈번하다.</h3>
+
+<p>HTTP 헤더에는 크기제한이 있는가에 대한 의문이 들었다.<br />
+서치 결과 답은 상황에 따라 다르다는 것이다.</p>
+
+<p>기본적으로 HTTP RFC에는 헤더의 최대 크기 제한은 없지만<br />
+우리가 사용하는 웹서버 소프트웨어에서 크기를 제한하고 있다.</p>
+
+<p>Here is the limit of most popular web server</p>
+
+<h3 id="web-server-defualt-limit">Web Server Defualt Limit</h3>
+
+<ul>
+  <li>Apache 8K</li>
+  <li>Nginx 4K-8K</li>
+  <li>IIS 8K-16K</li>
+  <li>Tomcat 8K – 48K</li>
+  <li>Node (&lt;13) - 8K; (&gt;13) - 16K</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">No, HTTP does not define any limit. However most web servers do limit size of headers they accept. For example in Apache default limit is 8KB, in IIS it's 16K. Server will return 413 Entity Too Large error if headers size exceeds that limit.</code></p>
+
+<p>HTTP에는 제한을 두기 않지만 대부분의 웹서버는 제한을 두고 있다.</p>
+
+<p>위의 명시된 사이즈를 넘을경우 <code class="language-plaintext highlighter-rouge">You will return 413 code</code></p>
+
+<p>물론 위의 제한에 맞춰서 해야한다기 보다는 설정값을 변경하면 사이즈를 조절할 수 있다.</p>
+
+<h3 id="설정-바꾸는-법">설정 바꾸는 법</h3>
+
+<p>톰캣의 경우 maxHttpHeaderSize 어트리뷰트값을 지정해주면 해당 제한을 바꿀수 있다.</p>
+
+<h3 id="결론">결론</h3>
+
+<p>HTTP 자체적으로는 크기제한이 없다.
+But, Web Server 소프트웨어 입장에선 제한하지 않을 경우의 리스크를 감수하기보단<br />
+제한을 둔 후에 사용자가 그 제한을 컨트롤할 수 있게끔 만든 것으로 보인다.</p>
+
+<p>출처 : https://stackoverflow.com/questions/686217/maximum-on-http-header-values
+출처 : https://tomcat.apache.org/tomcat-8.0-doc/config/http.html</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#http" class="page__taxonomy-item p-category" rel="tag">HTTP</a><span class="sep">, </span>
+    
+      <a href="/tags/#http-%ED%97%A4%EB%8D%94" class="page__taxonomy-item p-category" rel="tag">HTTP 헤더</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-07-22T00:00:00+09:00">July 22, 2022</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=HTTP+%ED%97%A4%EB%8D%94%EC%9D%98+%ED%81%AC%EA%B8%B0%EC%A0%9C%ED%95%9C%EC%9D%B4%EB%9E%80%3F%20http%3A%2F%2Flocalhost%3A4000%2Ftil%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Ftil%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Ftil%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/til/" class="pagination--pager" title="[Mac] webStorm 단축키 정리
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">You may also enjoy</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/" rel="permalink">[Mac] webStorm 단축키 정리
+</a>
+      
+    </h2>
+    
 
   <p class="page__meta">
     
@@ -283,328 +429,11 @@
   </p>
 
 
-        </header>
-      
-
-      <section class="page__content e-content" itemprop="text">
-        
-        <h3 id="control--return">control + return</h3>
-
-<ul>
-  <li>(Navigator에서) 새 파일 생성하기 option(alt) + F12 터미널창 열기</li>
-</ul>
-
-<h3 id="command-">command <code class="language-plaintext highlighter-rouge">+</code></h3>
-
-<ul>
-  <li>preference 열기</li>
-</ul>
-
-<h3 id="command--delete">command + delete</h3>
-
-<ul>
-  <li>한 줄 라인 없애기 /</li>
-</ul>
-
-<h3 id="command--return">command + return</h3>
-
-<ul>
-  <li>현재줄에서 커서 유지하면서 다음줄 새로 생성하기</li>
-</ul>
-
-<h3 id="shiftcommand-return">shift(command) + return </h3>
-
-<ul>
-  <li>아래로 새로운 라인으로 줄바꿈하기</li>
-</ul>
-
-<h3 id="command--optionalt-return">command + option(alt) +  return </h3>
-
-<ul>
-  <li>윗줄로 새로운 라인으로 줄바꿈하기</li>
-</ul>
-
-<h3 id="control--shift--j">control + shift + J</h3>
-
-<ul>
-  <li>라인 합치기</li>
-</ul>
-
-<h3 id="command--d">command + d </h3>
-
-<ul>
-  <li>한 줄 복사하기</li>
-</ul>
-
-<h3 id="command--shift--u">command + shift + U </h3>
-
-<ul>
-  <li>대소문자 토글하기</li>
-</ul>
-
-<h3 id="optionalt--방향키상하">option(alt) + 방향키(상하) </h3>
-
-<ul>
-  <li>selection 지정하기( 방향키 위: expand, 방향키 아래: shrink )</li>
-</ul>
-
-<h3 id="command--option--t">command + option + T  </h3>
-
-<ul>
-  <li>emmet의 코드 wrap abbreviation</li>
-</ul>
-
-<h3 id="control--optionalt">control + option(alt) </h3>
-
-<ul>
-  <li>+ 방향키(좌우) emmet의 moving next or previous edit point</li>
-</ul>
-
-<h3 id="shift--f6">shift + F6 </h3>
-
-<ul>
-  <li>file rename</li>
-</ul>
-
-<h3 id="command--shift--deletefn">command + shift + delete(fn) </h3>
-
-<ul>
-  <li>코드 선택적 remove</li>
-</ul>
-
-<h3 id="shift--optionalt--방향키상하">shift + option(alt)  + 방향키(상하)  </h3>
-
-<ul>
-  <li>코드 라인 상하로 옮기기</li>
-</ul>
-
-<h3 id="shift--command--방향키상하">shift + command  + 방향키(상하)  </h3>
-
-<ul>
-  <li>코드 라인 소스포맷팅하면서 상하로 옮기기</li>
-</ul>
-
-<h3 id="command--l">command + L  </h3>
-
-<ul>
-  <li>Go to the Line</li>
-</ul>
-
-<h3 id="command--shift--8">command + shift + 8 </h3>
-
-<ul>
-  <li>column selection mode</li>
-</ul>
-
-<h3 id="optalt--드래그">opt(alt) + 드래그 </h3>
-
-<ul>
-  <li>column selection mode</li>
-</ul>
-
-<h3 id="command--드래그">command + 드래그 </h3>
-
-<ul>
-  <li>드래그 한 코드 마우스로 원하는 위치로 이동시키기</li>
-</ul>
-
-<h3 id="command--">command + /  </h3>
-
-<ul>
-  <li>라인 한줄씩 주석처리하기</li>
-</ul>
-
-<h3 id="command--optalt--">command + opt(alt) + /  </h3>
-
-<ul>
-  <li>드래그 섹션이나 해당 커서섹션만 주석처리하기</li>
-</ul>
-
-<h3 id="optalt--">opt(alt) + /  </h3>
-
-<ul>
-  <li>Remember previous word</li>
-</ul>
-
-<h3 id="optalt--shift--">opt(alt) + shift + / </h3>
-
-<ul>
-  <li>Remember next word</li>
-</ul>
-
-<h3 id="shift--control--j">shift + control + J  </h3>
-
-<ul>
-  <li>라인 합치기</li>
-</ul>
-
-<h3 id="command--shift--v">command + shift + v  </h3>
-
-<ul>
-  <li>최근 복사했던 목록 보여주기</li>
-</ul>
-
-<h3 id="command--shift--">command + shift + [,]  </h3>
-
-<ul>
-  <li>열린 파일 간 이동</li>
-</ul>
-
-<h3 id="control--k">control + k  </h3>
-
-<ul>
-  <li>커서 라인 뒤의 코드만 모두 지움</li>
-</ul>
-
-<h3 id="control--g">control + g </h3>
-
-<ul>
-  <li>드래그한 블럭과 일치 코드 블럭만 선택하기</li>
-</ul>
-
-<h3 id="command--control--g">command + control + g </h3>
-
-<ul>
-  <li>드래그한 블럭과 일치하는 코드 모두 선택하기</li>
-</ul>
-
-<h3 id="command--shift--o">command + shift + O </h3>
-
-<ul>
-  <li>project내의 파일 바로 찾기</li>
-</ul>
-
-<h3 id="command--optalt--o">command + opt(alt) + O   </h3>
-
-<ul>
-  <li>symbol 찾기 ( 코드명, 기호등등 )</li>
-</ul>
-
-<h3 id="control--tab">control + tab  </h3>
-
-<ul>
-  <li>switcher</li>
-</ul>
-
-<h3 id="command--e">command + E  </h3>
-
-<ul>
-  <li>최근 열었던 파일 항목 보여주기</li>
-</ul>
-
-<h3 id="command--shift--u----">command + shift + U         </h3>
-
-<ul>
-  <li>영문 텍스트 대문자를 소문자로 소문자를 대문자로 변환하기</li>
-</ul>
-
-<h3 id="command---마침표----">command + . (마침표)         </h3>
-
-<ul>
-  <li>코드 폴딩 기능 사용하기</li>
-</ul>
-
-<h3 id="command--opt--l----">command + opt + L         </h3>
-
-<ul>
-  <li>소스 포맷하기</li>
-</ul>
-
-<h3 id="control--shift--j----">control + shift + J         </h3>
-
-<ul>
-  <li>소스 드래그 영역 싱글라인으로 만들기</li>
-</ul>
-
-<h3 id="command--shift--del----">command + shift + del         </h3>
-
-<ul>
-  <li>소스 태그 선택적 삭제하기</li>
-</ul>
-
-<h3 id="command--opt--좌우-방향키----">command + opt + 좌,우 방향키          </h3>
-
-<ul>
-  <li>Edit Point 이동하기</li>
-</ul>
-
-<h3 id="control--opt--n----">control + opt + N         </h3>
-
-<ul>
-  <li>파일 생성하기</li>
-</ul>
-
-<h3 id="control--opt--shift--상하-방향키----">control + opt + shift + 상,하 방향키         </h3>
-
-<ul>
-  <li>소스 수정,편집 내용으로 이동하기</li>
-</ul>
-
-        
-      </section>
-
-      <footer class="page__meta">
-        
-        
-  
-
-
-  
-
-  <p class="page__taxonomy">
-    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
-    <span itemprop="keywords">
-    
-      <a href="/tags/#webstorm" class="page__taxonomy-item p-category" rel="tag">webstorm</a><span class="sep">, </span>
-    
-      <a href="/tags/#webstorm-%EB%8B%A8%EC%B6%95%ED%82%A4" class="page__taxonomy-item p-category" rel="tag">webstorm 단축키</a>
-    
-    </span>
-  </p>
-
-
-
-
-        
-
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-07-20T00:00:00+09:00">July 20, 2022</time></p>
-
-      </footer>
-
-      <section class="page__share">
-  
-    <h4 class="page__share-title">Share on</h4>
-  
-
-  <a href="https://twitter.com/intent/tweet?text=%5BMac%5D+webStorm+%EB%8B%A8%EC%B6%95%ED%82%A4+%EC%A0%95%EB%A6%AC%20http%3A%2F%2Flocalhost%3A4000%2Ftil%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
-
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Ftil%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
-
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Ftil%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
-</section>
-
-
-      
-  <nav class="pagination">
-    
-      <a href="/til/" class="pagination--pager" title="프로젝트에 eslint-airbnb 적용해 나만의 eslint 규칙 만들기
-">Previous</a>
-    
-    
-      <a href="#" class="pagination--pager disabled">Next</a>
-    
-  </nav>
-
-    </div>
-
-    
+    <p class="archive__item-excerpt" itemprop="description">까먹었을 때 다시 보는 용도
+</p>
   </article>
+</div>
 
-  
-  
-    <div class="page__related">
-      <h2 class="page__related-title">You may also enjoy</h2>
-      <div class="grid__wrapper">
         
           
 
@@ -721,46 +550,6 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/til/" rel="permalink">npm run dev 에러 (feat. Node js)
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          less than 1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">SyntaxError: Cannot use import statement outside a module
 </p>
   </article>
 </div>

@@ -1,0 +1,39 @@
+I"�<ul>
+  <li>HTTP 통신을 사용하다 보면 헤더에 정보를 담아 보내는 일이 빈번하다.</li>
+</ul>
+
+<p>HTTP 헤더에는 크기제한이 있는가?
+답은 상황에따라 다르다.</p>
+
+<p>기본적으로 HTTP RFC에는 헤더의 최대 크기 제한은 없다.</p>
+
+<p>하지만 우리가 사용하는 웹서버 소프트웨어에서 크기를 제한하고 있다.</p>
+
+<p>Here is the limit of most popular web server</p>
+
+<p>Web Server Defualt Limit
+Apache 8K
+Nginx 4K-8K
+IIS 8K-16K
+Tomcat 8K – 48K
+Node (&lt;13) - 8K; (&gt;13) - 16K</p>
+
+<p>No, HTTP does not define any limit. However most web servers do limit size of headers they accept. For example in Apache default limit is 8KB, in IIS it’s 16K. Server will return 413 Entity Too Large error if headers size exceeds that limit.</p>
+
+<p>자료출처 : https://stackoverflow.com/questions/686217/maximum-on-http-header-values</p>
+
+<p>HTTP에는 제한을 두기 않지만 대부분의 웹서버는 제한을 두고 있다.</p>
+
+<p>위의 명시된 사이즈를 넘을경우 413코드를 리턴받게 될 것이다.</p>
+
+<p>물론 위의 제한에 맞춰서 해야한다기 보다는 설정값을 변경하면 사이즈를 조절할 수 있다.</p>
+
+<p>설정 바꾸는 법
+톰켓의 경우 maxHttpHeaderSize 어트리뷰트값을 지정해주면 해당 제한을 바꿀수 있다고 명시되어 있다.</p>
+
+<p>자료출처 : https://tomcat.apache.org/tomcat-8.0-doc/config/http.html</p>
+
+<p>결론
+HTTP 자체적으로 크기제한이 없다.
+하지만 Web Server 소프트웨어입장에선 제한하지 않을 경우의 리스크를 감수하기 보단 제한을 둔 후에 사용자가 그 제한을 컨트롤 할 수 있게끔 한것으로 보인다.</p>
+:ET
