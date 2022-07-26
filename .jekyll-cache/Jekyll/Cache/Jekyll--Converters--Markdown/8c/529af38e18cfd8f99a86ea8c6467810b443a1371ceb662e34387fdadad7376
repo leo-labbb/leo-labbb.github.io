@@ -1,0 +1,37 @@
+I"�<p>리액트에서의 onChange , onClick 등에 들어오는 event 파라미터는
+브라우저에서 사용되고있는 Event 인
+Event와는 다른 객체이다.</p>
+
+<p>해당 event 객체는 리액트에서 작성한 SyntheticEvent로 웹 브라우저에 있는 Event를 이용한 새로운 객체입니다.
+그렇기 때문에 위의 비동기 처리시에는 null 값이 되며 해당 경고가 나타납니다.</p>
+
+<p>리액트 공식 문서에서도 해당 부분을 해결하기 위해서는
+e.persist 라는 함수를 사용하라고 되어있고 사용은 간단하다.</p>
+
+<p>해당 onChange or onClick 에러 코드에서 e.persist()를 호출하면 된다.</p>
+
+<p>onChange={
+(e)=&gt;{
+e.persist();
+console.log(e.type);
+console.log(e.target.value);</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>          setTimeout(()=&gt;{
+            console.warn(e.type);
+          })
+        }
+      }&gt;
+</code></pre></div></div>
+
+<p>호출시에는 이제 setTimeout에서도 e.type이 노출됩니다.</p>
+
+<p>동작이 왜 이렇게 바뀌냐면!</p>
+
+<p>기본적으로 리액트에서 사용되고있는 SyntheticEvent 는 객체 풀링 방식을 사용합니다. (Object Pooling) 매 이벤트마다 해당 객체 사용되는것에 대해서 성능상의 이유로
+리액트에서는 Object Pooling을 사용함으로써 객체 생성 시간을 줄이고
+GC에 대한 노출도 줄이며 메모리관리에 소비되는 시간을 줄이는 방식을 사용하고 있기 때문입니다.
+그렇기 때문에 객체가 호출되고 난 후에 이벤트 속성이 초기화 됩니다.</p>
+
+<p>그래서 비동기로 호출하였을 경우에는 해당 객체가 비어있는 현상이 발생합니다.
+해결책으로 e.persist를 호출하게되면 기존에 사용하고 있던 이벤트 풀 ( Event Pool ) 에서 제거되고 사용자 코드로 사용이 된다.</p>
+:ET

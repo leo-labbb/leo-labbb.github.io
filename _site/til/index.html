@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>HTTP 헤더의 크기제한이란? - leo-labbb DEVLOG</title>
-<meta name="description" content="awesome world">
+<!-- begin _includes/seo.html --><title>[REACT] 리액트 value 에러 / e.persist(); - leo-labbb DEVLOG</title>
+<meta name="description" content="다시 만난 리액트">
 
 
   <meta name="author" content="이승호">
@@ -22,11 +22,11 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="leo-labbb DEVLOG">
-<meta property="og:title" content="HTTP 헤더의 크기제한이란?">
+<meta property="og:title" content="[REACT] 리액트 value 에러 / e.persist();">
 <meta property="og:url" content="http://localhost:4000/til/">
 
 
-  <meta property="og:description" content="awesome world">
+  <meta property="og:description" content="다시 만난 리액트">
 
 
 
@@ -34,7 +34,7 @@
 
 
 
-  <meta property="article:published_time" content="2022-07-22T00:00:00+09:00">
+  <meta property="article:published_time" content="2022-07-26T00:00:00+09:00">
 
 
 
@@ -250,16 +250,16 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="HTTP 헤더의 크기제한이란?">
-    <meta itemprop="description" content="">
-    <meta itemprop="datePublished" content="2022-07-22T00:00:00+09:00">
+    <meta itemprop="headline" content="[REACT] 리액트 value 에러 / e.persist();">
+    <meta itemprop="description" content="다시 만난 리액트">
+    <meta itemprop="datePublished" content="2022-07-26T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/til/" class="u-url" itemprop="url">HTTP 헤더의 크기제한이란?
+            <a href="http://localhost:4000/til/" class="u-url" itemprop="url">[REACT] 리액트 value 에러 / e.persist();
 </a>
           </h1>
           
@@ -288,46 +288,42 @@
 
       <section class="page__content e-content" itemprop="text">
         
-        <h3 id="http-통신을-사용하다-보면-헤더에-정보를-담아-보내는-일이-빈번하다">HTTP 통신을 사용하다 보면 헤더에 정보를 담아 보내는 일이 빈번하다.</h3>
+        <p>리액트에서의 onChange , onClick 등에 들어오는 event 파라미터는
+브라우저에서 사용되고있는 Event 인
+Event와는 다른 객체이다.</p>
 
-<p>HTTP 헤더에는 크기제한이 있는가에 대한 의문이 들었다.<br />
-서치 결과 답은 상황에 따라 다르다는 것이다.</p>
+<p>해당 event 객체는 리액트에서 작성한 SyntheticEvent로 웹 브라우저에 있는 Event를 이용한 새로운 객체입니다.
+그렇기 때문에 위의 비동기 처리시에는 null 값이 되며 해당 경고가 나타납니다.</p>
 
-<p>기본적으로 HTTP RFC에는 헤더의 최대 크기 제한은 없지만<br />
-우리가 사용하는 웹서버 소프트웨어에서 크기를 제한하고 있다.</p>
+<p>리액트 공식 문서에서도 해당 부분을 해결하기 위해서는
+e.persist 라는 함수를 사용하라고 되어있고 사용은 간단하다.</p>
 
-<p>Here is the limit of most popular web server</p>
+<p>해당 onChange or onClick 에러 코드에서 e.persist()를 호출하면 된다.</p>
 
-<h3 id="web-server-defualt-limit">Web Server Defualt Limit</h3>
+<p>onChange={
+(e)=&gt;{
+e.persist();
+console.log(e.type);
+console.log(e.target.value);</p>
 
-<ul>
-  <li>Apache 8K</li>
-  <li>Nginx 4K-8K</li>
-  <li>IIS 8K-16K</li>
-  <li>Tomcat 8K – 48K</li>
-  <li>Node (&lt;13) - 8K; (&gt;13) - 16K</li>
-</ul>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>          setTimeout(()=&gt;{
+            console.warn(e.type);
+          })
+        }
+      }&gt;
+</code></pre></div></div>
 
-<p><code class="language-plaintext highlighter-rouge">No, HTTP does not define any limit. However most web servers do limit size of headers they accept. For example in Apache default limit is 8KB, in IIS it's 16K. Server will return 413 Entity Too Large error if headers size exceeds that limit.</code></p>
+<p>호출시에는 이제 setTimeout에서도 e.type이 노출됩니다.</p>
 
-<p>HTTP에는 제한을 두기 않지만 대부분의 웹서버는 제한을 두고 있다.</p>
+<p>동작이 왜 이렇게 바뀌냐면!</p>
 
-<p>위의 명시된 사이즈를 넘을경우 <code class="language-plaintext highlighter-rouge">You will return 413 code</code></p>
+<p>기본적으로 리액트에서 사용되고있는 SyntheticEvent 는 객체 풀링 방식을 사용합니다. (Object Pooling) 매 이벤트마다 해당 객체 사용되는것에 대해서 성능상의 이유로
+리액트에서는 Object Pooling을 사용함으로써 객체 생성 시간을 줄이고
+GC에 대한 노출도 줄이며 메모리관리에 소비되는 시간을 줄이는 방식을 사용하고 있기 때문입니다.
+그렇기 때문에 객체가 호출되고 난 후에 이벤트 속성이 초기화 됩니다.</p>
 
-<p>물론 위의 제한에 맞춰서 해야한다기 보다는 설정값을 변경하면 사이즈를 조절할 수 있다.</p>
-
-<h3 id="설정-바꾸는-법">설정 바꾸는 법</h3>
-
-<p>톰캣의 경우 maxHttpHeaderSize 어트리뷰트값을 지정해주면 해당 제한을 바꿀수 있다.</p>
-
-<h3 id="결론">결론</h3>
-
-<p>HTTP 자체적으로는 크기제한이 없다.
-But, Web Server 소프트웨어 입장에선 제한하지 않을 경우의 리스크를 감수하기보단<br />
-제한을 둔 후에 사용자가 그 제한을 컨트롤할 수 있게끔 만든 것으로 보인.</p>
-
-<p>출처 : https://stackoverflow.com/questions/686217/maximum-on-http-header-values
-출처 : https://tomcat.apache.org/tomcat-8.0-doc/config/http.html</p>
+<p>그래서 비동기로 호출하였을 경우에는 해당 객체가 비어있는 현상이 발생합니다.
+해결책으로 e.persist를 호출하게되면 기존에 사용하고 있던 이벤트 풀 ( Event Pool ) 에서 제거되고 사용자 코드로 사용이 된다.</p>
 
         
       </section>
@@ -344,9 +340,11 @@ But, Web Server 소프트웨어 입장에선 제한하지 않을 경우의 리�
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#http" class="page__taxonomy-item p-category" rel="tag">HTTP</a><span class="sep">, </span>
+      <a href="/tags/#e-persist" class="page__taxonomy-item p-category" rel="tag">e.persist</a><span class="sep">, </span>
     
-      <a href="/tags/#http-%ED%97%A4%EB%8D%94" class="page__taxonomy-item p-category" rel="tag">HTTP 헤더</a>
+      <a href="/tags/#react" class="page__taxonomy-item p-category" rel="tag">REACT</a><span class="sep">, </span>
+    
+      <a href="/tags/#%EB%A6%AC%EC%95%A1%ED%8A%B8-value-%EC%97%90%EB%9F%AC" class="page__taxonomy-item p-category" rel="tag">리액트 Value 에러</a>
     
     </span>
   </p>
@@ -356,7 +354,7 @@ But, Web Server 소프트웨어 입장에선 제한하지 않을 경우의 리�
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-07-22T00:00:00+09:00">July 22, 2022</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-07-26T00:00:00+09:00">July 26, 2022</time></p>
 
       </footer>
 
@@ -365,7 +363,7 @@ But, Web Server 소프트웨어 입장에선 제한하지 않을 경우의 리�
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=HTTP+%ED%97%A4%EB%8D%94%EC%9D%98+%ED%81%AC%EA%B8%B0%EC%A0%9C%ED%95%9C%EC%9D%B4%EB%9E%80%3F%20http%3A%2F%2Flocalhost%3A4000%2Ftil%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%5BREACT%5D+%EB%A6%AC%EC%95%A1%ED%8A%B8+value+%EC%97%90%EB%9F%AC+%2F+e.persist%28%29%3B%20http%3A%2F%2Flocalhost%3A4000%2Ftil%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
   <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Ftil%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
@@ -376,7 +374,7 @@ But, Web Server 소프트웨어 입장에선 제한하지 않을 경우의 리�
       
   <nav class="pagination">
     
-      <a href="/til/" class="pagination--pager" title="[Mac] webStorm 단축키 정리
+      <a href="/til/" class="pagination--pager" title="HTTP 헤더의 크기제한이란?
 ">Previous</a>
     
     
@@ -394,6 +392,46 @@ But, Web Server 소프트웨어 입장에선 제한하지 않을 경우의 리�
     <div class="page__related">
       <h2 class="page__related-title">You may also enjoy</h2>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/" rel="permalink">HTTP 헤더의 크기제한이란?
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
         
           
 
@@ -485,46 +523,6 @@ But, Web Server 소프트웨어 입장에선 제한하지 않을 경우의 리�
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
         <a href="/til/" rel="permalink">moment.js를 이용해 날짜 계산하는 방법
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          less than 1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/til/" rel="permalink">ecosystem config js 용어 정리
 </a>
       
     </h2>

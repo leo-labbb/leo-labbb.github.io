@@ -58,4 +58,10 @@ var store = [{
         "tags": ["HTTP","HTTP 헤더"],
         "url": "/til/",
         "teaser": null
+      },{
+        "title": "[REACT] 리액트 value 에러 / e.persist();",
+        "excerpt":"리액트에서의 onChange , onClick 등에 들어오는 event 파라미터는 브라우저에서 사용되고있는 Event 인 Event와는 다른 객체이다. 해당 event 객체는 리액트에서 작성한 SyntheticEvent로 웹 브라우저에 있는 Event를 이용한 새로운 객체입니다. 그렇기 때문에 위의 비동기 처리시에는 null 값이 되며 해당 경고가 나타납니다. 리액트 공식 문서에서도 해당 부분을 해결하기 위해서는 e.persist 라는 함수를 사용하라고...","categories": [],
+        "tags": ["REACT","e.persist","리액트 Value 에러"],
+        "url": "/til/",
+        "teaser": null
       }]
