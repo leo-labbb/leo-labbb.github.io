@@ -1,4 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-07-26T20:48:00+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">leo-labbb DEVLOG</title><subtitle>awesome world</subtitle><author><name>이승호</name></author><entry><title type="html">[REACT] 리액트 value 에러 / e.persist();</title><link href="http://localhost:4000/til/" rel="alternate" type="text/html" title="[REACT] 리액트 value 에러 / e.persist();" /><published>2022-07-26T00:00:00+09:00</published><updated>2022-07-26T00:00:00+09:00</updated><id>http://localhost:4000/til</id><content type="html" xml:base="http://localhost:4000/til/"><![CDATA[<p>리액트에서의 onChange , onClick 등에 들어오는 event 파라미터는
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-07-27T21:51:52+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">leo-labbb DEVLOG</title><subtitle>awesome world</subtitle><author><name>이승호</name></author><entry><title type="html">쉘 스크립트 기본 문법 (+ case)</title><link href="http://localhost:4000/til/" rel="alternate" type="text/html" title="쉘 스크립트 기본 문법 (+ case)" /><published>2022-07-27T00:00:00+09:00</published><updated>2022-07-27T00:00:00+09:00</updated><id>http://localhost:4000/til</id><content type="html" xml:base="http://localhost:4000/til/"><![CDATA[<p>쉘스크립트 기본 &amp; 문법</p>
+
+<p>https://inpa.tistory.com/entry/LINUX-%EC%89%98-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%ED%95%B5%EC%8B%AC-%EB%AC%B8%EB%B2%95-%EC%B4%9D%EC%A0%95%EB%A6%AC</p>
+
+<p>쉘스크립트 case</p>
+
+<p>https://jhnyang.tistory.com/175</p>]]></content><author><name>이승호</name></author><category term="쉘스크립트" /><category term="쉘스크립트 문법" /></entry><entry><title type="html">[REACT] 리액트 value 에러 / e.persist();</title><link href="http://localhost:4000/til/" rel="alternate" type="text/html" title="[REACT] 리액트 value 에러 / e.persist();" /><published>2022-07-26T00:00:00+09:00</published><updated>2022-07-26T00:00:00+09:00</updated><id>http://localhost:4000/til</id><content type="html" xml:base="http://localhost:4000/til/"><![CDATA[<p>리액트에서의 onChange , onClick 등에 들어오는 event 파라미터는
 브라우저에서 사용되고있는 Event 인
 Event와는 다른 객체이다.</p>
 
@@ -530,48 +536,4 @@ NoSQL이 등장하면서 기존의 RDBMS의 단점들이 부각되기는 하지�
 
 <p>NoSQL들을 보면 메모리를 많이 사용해서 성능도 향상시키면서 확장성도 어느 정도갖추도록 아키텍쳐들이 개선되어 가고 있지만 이를 위해서 필요한 서버의 성능도 올라가야합니다.</p>
 
-<p>이를 위해 서버의 비용도 부담이 되기 때문에 이점도 고려를 해야하는 사항입니다.</p>]]></content><author><name>이승호</name></author><category term="몽고DB" /><category term="NoSQL" /><category term="Blog" /><summary type="html"><![CDATA[몽고DB야 안녕!]]></summary></entry><entry><title type="html">백엔드 개발자 첫 출근 후기 (feat. Node js)</title><link href="http://localhost:4000/til/" rel="alternate" type="text/html" title="백엔드 개발자 첫 출근 후기 (feat. Node js)" /><published>2022-06-21T00:00:00+09:00</published><updated>2022-06-21T00:00:00+09:00</updated><id>http://localhost:4000/til</id><content type="html" xml:base="http://localhost:4000/til/"><![CDATA[<p><code class="language-plaintext highlighter-rouge">아마 생활코딩님이 없었다면 지금의 나도 없지 않을까?</code><br />
-코딩이라는 것에 관심이 있었지만<br />
-만약 생활코딩님의 입문자들을 위한 영상이 없었더라면,,
-입문하기 어렵다는 이유로 개발을 시작하지 않았을지도 모른다.</p>
-
-<p>그렇게 개발 공부를 하면서<br />
-사실 직장을 가지게 될 것이라고는 생각하지 않았었다.</p>
-
-<p>그저 재미로 시작한 것일 뿐인데<br />
-하다보니 내 생활이 되고 점점 개발은 내게 스며들어왔다.</p>
-
-<p>서론이 너무 길었다!</p>
-
-<p>백엔드 개발자로 이틀을 출근했다.<br />
-출근 전 머릿속으로 어떤 모습일지 어떻게 일하게 될 지<br />
-상상하고 즐겁게 출근했는데 ㅎㅎ</p>
-
-<p>첫 날은 가자마자 같이 일하게 될 동료분들과 인사를 나누고<br />
-포맷된 아이맥 앞에 앉았다.<br />
-맥북은 계속 써봤지만 아이맥을 막상 보니 커다란 맥북을 보는 기분이었다.</p>
-
-<p>포맷된 아이맥으로 개발 환경 세팅을 했다.<br />
-vscode부터 시작해서 mongodb, postman, webstorm까지<br />
-그리고 협업을 위한 슬랙, 깃헙, 지라, 회사 개인 계정을 지급받았다.</p>
-
-<p>아직 회사 내 개발이 어떻게 돌아가는지 잘 모르기 때문에 사실 도메인 이해가 먼저고,<br />
-이제 막 도메인이 어떻게 돌아가는지 파악하고있다~~</p>
-
-<p>그래도 node js로 이루어진 백엔드 파트여서 다행이다 싶다가도<br />
-몽고DB로 이루어진 DB파트를 보며 알아갈게 생겨서 재밌겠다!라는 생각도 들었다ㅎㅎ</p>
-
-<p>고작 이틀 지났지만 대표님과 회사 동료분들의 인상이 다들 참 좋으시다.<br />
-나이대도 나와 비슷해서 친근한 느낌마저 든다 :)</p>
-
-<p>이틀 동안 나가보니 딱 간략하게 정리하자면!!</p>
-
-<p>회사 내 도메인 파악을 끝내고 어서 실무에 투입되서 몰입해보고 싶다!<br />
-그리고 역시 공부할 때와 실제로 적용되서 비즈니스로 운영되는 코드를 보는 것은<br />
-느낌 자체가 다르다.</p>
-
-<p>실질적으로 사용성이 좋은 코드, 성능에 맞는 코드가 필요하기 때문에<br />
-이제 제대로 경기장에 나온 느낌이다 ㅎㅎ</p>
-
-<p>개발 공부를 처음 시작할 때 즈음 블로그에 기록했었던 말이 생각난다.<br />
-빠르게 가는 것보다 천천히 한 걸음씩 가자!</p>]]></content><author><name>이승호</name></author><category term="개발자 블로그" /><category term="backend" /><category term="첫 출근" /><category term="Blog" /><summary type="html"><![CDATA[달콤한 9개월 간의 여정]]></summary></entry></feed>
+<p>이를 위해 서버의 비용도 부담이 되기 때문에 이점도 고려를 해야하는 사항입니다.</p>]]></content><author><name>이승호</name></author><category term="몽고DB" /><category term="NoSQL" /><category term="Blog" /><summary type="html"><![CDATA[몽고DB야 안녕!]]></summary></entry></feed>
