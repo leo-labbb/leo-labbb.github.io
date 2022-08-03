@@ -1,0 +1,17 @@
+I"�<p>MIME Type이란?</p>
+
+<p>Multipose Internet Mail Extensions
+메시지의 내용이<br />
+어떤 형식인지 알려주기 위한 것<br />
+Content-Type을 통해 헤더 값을 적절히 MIME-Type 값으로 설정해주면 된다.
+Content Type</p>
+
+<p>text/plain -&gt; 일반 텍스트 문서<br />
+text/html -&gt; HTML 문서<br />
+text/css -&gt; css 문서<br />
+text/xml -&gt; xml 문서<br />
+image/jpeg , image/png -&gt; jpeg, png 이미지 파일<br />
+video/mpeg, audio/mp3 -&gt; 비디오, 오디오 파일<br />
+application/zip -&gt; 압축파일<br />
+application/octet-stream -&gt; 아카이브 문서 (인코딩된 다중 파일)</p>
+:ET

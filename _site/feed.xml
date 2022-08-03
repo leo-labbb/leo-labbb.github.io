@@ -1,17 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-08-03T09:54:38+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">leo-labbb DEVLOG</title><subtitle>awesome world</subtitle><author><name>이승호</name></author><entry><title type="html">MIME Type이란? (feat. Content-Type)</title><link href="http://localhost:4000/til/" rel="alternate" type="text/html" title="MIME Type이란? (feat. Content-Type)" /><published>2022-08-03T00:00:00+09:00</published><updated>2022-08-03T00:00:00+09:00</updated><id>http://localhost:4000/til</id><content type="html" xml:base="http://localhost:4000/til/"><![CDATA[<p>MIME Type이란?</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-08-03T10:04:59+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">leo-labbb DEVLOG</title><subtitle>awesome world</subtitle><author><name>이승호</name></author><entry><title type="html">MIME Type이란? (feat. Content-Type)</title><link href="http://localhost:4000/til/" rel="alternate" type="text/html" title="MIME Type이란? (feat. Content-Type)" /><published>2022-08-03T00:00:00+09:00</published><updated>2022-08-03T00:00:00+09:00</updated><id>http://localhost:4000/til</id><content type="html" xml:base="http://localhost:4000/til/"><![CDATA[<p>MIME Type이란?</p>
 
 <p>Multipose Internet Mail Extensions
-메시지의 내용이 어떤 형식인지 알려주기 위한 것
-Content-Type을 통해 헤더 값을 적절히 MIME-Type 값으로 설정해주면 된다.
+메시지의 내용이<br />
+어떤 형식인지 알려주기 위한 것</p>
+
+<p>Content-Type을 통해 헤더 값을 적절히 MIME-Type 값으로 설정해주면 된다.
 Content Type</p>
 
-<p>text/plain -&gt; 일반 텍스트 문서
-text/html -&gt; HTML 문서
-text/css -&gt; css 문서
-text/xml -&gt; xml 문서
-image/jpeg , image/png -&gt; jpeg, png 이미지 파일
-video/mpeg, audio/mp3 -&gt; 비디오, 오디오 파일
-application/zip -&gt; 압축파일
+<p>text/plain -&gt; 일반 텍스트 문서<br />
+text/html -&gt; HTML 문서<br />
+text/css -&gt; css 문서<br />
+text/xml -&gt; xml 문서<br />
+image/jpeg , image/png -&gt; jpeg, png 이미지 파일<br />
+video/mpeg, audio/mp3 -&gt; 비디오, 오디오 파일<br />
+application/zip -&gt; 압축파일<br />
 application/octet-stream -&gt; 아카이브 문서 (인코딩된 다중 파일)</p>]]></content><author><name>이승호</name></author><category term="MIME" /><category term="Content-Type" /></entry><entry><title type="html">쉘 스크립트 기본 문법 (+ case)</title><link href="http://localhost:4000/til/" rel="alternate" type="text/html" title="쉘 스크립트 기본 문법 (+ case)" /><published>2022-07-27T00:00:00+09:00</published><updated>2022-07-27T00:00:00+09:00</updated><id>http://localhost:4000/til</id><content type="html" xml:base="http://localhost:4000/til/"><![CDATA[<p>쉘스크립트 기본 &amp; 문법</p>
 
 <p>https://inpa.tistory.com/entry/LINUX-%EC%89%98-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%ED%95%B5%EC%8B%AC-%EB%AC%B8%EB%B2%95-%EC%B4%9D%EC%A0%95%EB%A6%AC</p>
