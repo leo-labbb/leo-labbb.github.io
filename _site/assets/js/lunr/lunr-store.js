@@ -70,4 +70,10 @@ var store = [{
         "tags": ["쉘스크립트","쉘스크립트 문법"],
         "url": "/til/",
         "teaser": null
+      },{
+        "title": "MIME Type이란? (feat. Content-Type)",
+        "excerpt":"MIME Type이란? Multipose Internet Mail Extensions 메시지의 내용이 어떤 형식인지 알려주기 위한 것 Content-Type을 통해 헤더 값을 적절히 MIME-Type 값으로 설정해주면 된다. Content Type text/plain -&gt; 일반 텍스트 문서 text/html -&gt; HTML 문서 text/css -&gt; css 문서 text/xml -&gt; xml 문서 image/jpeg , image/png -&gt; jpeg, png 이미지 파일 video/mpeg,...","categories": [],
+        "tags": ["MIME","Content-Type"],
+        "url": "/til/",
+        "teaser": null
       }]
