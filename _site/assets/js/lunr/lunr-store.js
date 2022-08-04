@@ -76,4 +76,10 @@ var store = [{
         "tags": ["MIME","Content-Type"],
         "url": "/til/",
         "teaser": null
+      },{
+        "title": "mongo db 설치 방법 및 세팅",
+        "excerpt":"   MongoDB Homebrew Tap 추가   brew tap mongodb/brew      Homebrew 최신 버전으로 업데이트   brew update      MongoDB 설치   brew install mongodb-community@5.0      Service로 MongoDB 실행 및 중지   brew services start mongodb-community@5.0  ","categories": [],
+        "tags": ["db","mongodb"],
+        "url": "/til/",
+        "teaser": null
       }]

@@ -1,0 +1,24 @@
+I"L<ol>
+  <li>MongoDB Homebrew Tap 추가</li>
+</ol>
+
+<p><code class="language-plaintext highlighter-rouge">brew tap mongodb/brew</code></p>
+
+<ol>
+  <li>Homebrew 최신 버전으로 업데이트</li>
+</ol>
+
+<p><code class="language-plaintext highlighter-rouge">brew update</code></p>
+
+<ol>
+  <li>MongoDB 설치</li>
+</ol>
+
+<p><code class="language-plaintext highlighter-rouge">brew install mongodb-community@5.0</code></p>
+
+<ol>
+  <li>Service로 MongoDB 실행 및 중지</li>
+</ol>
+
+<p><code class="language-plaintext highlighter-rouge">brew services start mongodb-community@5.0</code></p>
+:ET
