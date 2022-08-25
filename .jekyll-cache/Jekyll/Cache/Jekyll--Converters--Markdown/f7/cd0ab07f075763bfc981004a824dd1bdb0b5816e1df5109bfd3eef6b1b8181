@@ -1,0 +1,52 @@
+I"<p>EC2 생성하고(t3.micro) 30Gb 설정 (pem파일 잘 저장해놓기)</p>
+
+<p>웹스톰</p>
+
+<ul>
+  <li>Tools - Start SSH session 클릭해서 edit</li>
+</ul>
+
+<p>Host -&gt; EC2 퍼블릭 IPv4주소
+Username -&gt; 쓰고 싶은 이름
+Authentication type: Key pair</p>
+
+<ul>
+  <li>Tools - Deployment - Connection 클릭</li>
+</ul>
+
+<p>Type -&gt; SFTP
+SSH configuration -&gt; SSH session 네임 클릭
+Test Connection 해보고
+Root path는 /home/ubuntu 로 진행하면 된다.</p>
+
+<ul>
+  <li>우분투 접속 후 터미널에 차례대로 입력</li>
+</ul>
+
+<p>sudo apt-get update</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh</td>
+      <td>bash</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>export NVM_DIR=”$HOME/.nvm”
+[ -s “$NVM_DIR/nvm.sh” ] &amp;&amp; . “$NVM_DIR/nvm.sh” # This loads nvm
+[ -s “$NVM_DIR/bash_completion” ] &amp;&amp; . “$NVM_DIR/bash_completion” # This loads nvm bash_completion</p>
+
+<p>nvm ls</p>
+
+<p>nvm install v14</p>
+
+<p>nvm use v14</p>
+
+<p>sudo apt-get install nginx</p>
+
+<p>sudo service nginx start</p>
+
+<p>-&gt; 이 이후 깃헙 레포 HTTPS로 git clone! (8월 13일 에러뜨면 personal access token 생성 후 잘 저장해놓고 password로 사용해서 clone 받으면 된다!</p>
+:ET

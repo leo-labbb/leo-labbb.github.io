@@ -1,10 +1,0 @@
-I"<p>1: MongoDB Homebrew Tap 추가</p>
-
-<p><code class="language-plaintext highlighter-rouge">brew tap mongodb/brew</code></p>
-
-<ol>
-  <li>Homebrew 최신 버전으로 업데이트</li>
-</ol>
-
-<p><code class="language-plaintext highlighter-rouge">brew update</code></p>
-:ET

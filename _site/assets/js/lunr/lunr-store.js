@@ -82,4 +82,10 @@ var store = [{
         "tags": ["db","mongodb"],
         "url": "/til/",
         "teaser": null
+      },{
+        "title": "EC2 만들고 웹스톰에서 SSH 연결해서 레포 clone받는 방법",
+        "excerpt":"EC2 생성하고(t3.micro) 30Gb 설정 (pem파일 잘 저장해놓기) 웹스톰 Tools - Start SSH session 클릭해서 edit Host -&gt; EC2 퍼블릭 IPv4주소 Username -&gt; 쓰고 싶은 이름 Authentication type: Key pair Tools - Deployment - Connection 클릭 Type -&gt; SFTP SSH configuration -&gt; SSH session 네임 클릭 Test Connection 해보고 Root path는...","categories": [],
+        "tags": ["EC2","AWS","SSH"],
+        "url": "/til/",
+        "teaser": null
       }]

@@ -1,4 +1,54 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-08-04T23:29:04+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">leo-labbb DEVLOG</title><subtitle>awesome world</subtitle><author><name>이승호</name></author><entry><title type="html">mongo db 설치 방법 및 세팅</title><link href="http://localhost:4000/til/" rel="alternate" type="text/html" title="mongo db 설치 방법 및 세팅" /><published>2022-08-04T00:00:00+09:00</published><updated>2022-08-04T00:00:00+09:00</updated><id>http://localhost:4000/til</id><content type="html" xml:base="http://localhost:4000/til/"><![CDATA[<ol>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-08-25T23:45:00+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">leo-labbb DEVLOG</title><subtitle>awesome world</subtitle><author><name>이승호</name></author><entry><title type="html">EC2 만들고 웹스톰에서 SSH 연결해서 레포 clone받는 방법</title><link href="http://localhost:4000/til/" rel="alternate" type="text/html" title="EC2 만들고 웹스톰에서 SSH 연결해서 레포 clone받는 방법" /><published>2022-08-25T00:00:00+09:00</published><updated>2022-08-25T00:00:00+09:00</updated><id>http://localhost:4000/til</id><content type="html" xml:base="http://localhost:4000/til/"><![CDATA[<p>EC2 생성하고(t3.micro) 30Gb 설정 (pem파일 잘 저장해놓기)</p>
+
+<p>웹스톰</p>
+
+<ul>
+  <li>Tools - Start SSH session 클릭해서 edit</li>
+</ul>
+
+<p>Host -&gt; EC2 퍼블릭 IPv4주소
+Username -&gt; 쓰고 싶은 이름
+Authentication type: Key pair</p>
+
+<ul>
+  <li>Tools - Deployment - Connection 클릭</li>
+</ul>
+
+<p>Type -&gt; SFTP
+SSH configuration -&gt; SSH session 네임 클릭
+Test Connection 해보고
+Root path는 /home/ubuntu 로 진행하면 된다.</p>
+
+<ul>
+  <li>우분투 접속 후 터미널에 차례대로 입력</li>
+</ul>
+
+<p>sudo apt-get update</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh</td>
+      <td>bash</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>export NVM_DIR=”$HOME/.nvm”
+[ -s “$NVM_DIR/nvm.sh” ] &amp;&amp; . “$NVM_DIR/nvm.sh” # This loads nvm
+[ -s “$NVM_DIR/bash_completion” ] &amp;&amp; . “$NVM_DIR/bash_completion” # This loads nvm bash_completion</p>
+
+<p>nvm ls</p>
+
+<p>nvm install v14</p>
+
+<p>nvm use v14</p>
+
+<p>sudo apt-get install nginx</p>
+
+<p>sudo service nginx start</p>
+
+<p>-&gt; 이 이후 깃헙 레포 HTTPS로 git clone! (8월 13일 에러뜨면 personal access token 생성 후 잘 저장해놓고 password로 사용해서 clone 받으면 된다!</p>]]></content><author><name>이승호</name></author><category term="EC2" /><category term="AWS" /><category term="SSH" /></entry><entry><title type="html">mongo db 설치 방법 및 세팅</title><link href="http://localhost:4000/til/" rel="alternate" type="text/html" title="mongo db 설치 방법 및 세팅" /><published>2022-08-04T00:00:00+09:00</published><updated>2022-08-04T00:00:00+09:00</updated><id>http://localhost:4000/til</id><content type="html" xml:base="http://localhost:4000/til/"><![CDATA[<ol>
   <li>MongoDB Homebrew Tap 추가</li>
 </ol>
 
@@ -440,15 +490,4 @@ npm i --save-dev eslint-config-prettier
 };
 </code></pre></div></div>
 
-<p>https://velog.io/@altmshfkgudtjr/PM2-Node.js-%EB%AC%B4%EC%A4%91%EB%8B%A8-%EC%84%9C%EB%B9%84%EC%8A%A4</p>]]></content><author><name>이승호</name></author><category term="ecosystem" /><category term="config" /></entry><entry><title type="html">npm run dev 에러 (feat. Node js)</title><link href="http://localhost:4000/til/" rel="alternate" type="text/html" title="npm run dev 에러 (feat. Node js)" /><published>2022-06-26T00:00:00+09:00</published><updated>2022-06-26T00:00:00+09:00</updated><id>http://localhost:4000/til</id><content type="html" xml:base="http://localhost:4000/til/"><![CDATA[<p>npm run dev 에러를 만났다.
-<img width="853" alt="스크린샷 2022-06-26 22 46 40" src="https://user-images.githubusercontent.com/92617810/175818748-77b09a4f-9538-474b-9acf-8a6b4811b472.png" />
-<img width="877" alt="스크린샷 2022-06-26 22 46 59" src="https://user-images.githubusercontent.com/92617810/175818759-00759346-4833-44e6-a7f8-83f0af159170.png" /></p>
-
-<p>기본 모듈 시스템이 CommonJS인 Node.js에서<br />
-바벨을 통해 ESModule(+ 최신 ES문법)을 사용할 수 있도록 하고 있다.</p>
-
-<p>package.json의 type:module을 추가 하는 건<br />
-프로젝트의 모듈 시스템만ESModule로 변경하는 것으로,<br />
-바벨은 적용되지 않았을 수 있습니다.</p>
-
-<p>package.json 최상단에 “type”: “module”을 추가해서 해결했다!</p>]]></content><author><name>이승호</name></author><category term="Node js" /><category term="Javascript" /><summary type="html"><![CDATA[SyntaxError: Cannot use import statement outside a module]]></summary></entry></feed>
+<p>https://velog.io/@altmshfkgudtjr/PM2-Node.js-%EB%AC%B4%EC%A4%91%EB%8B%A8-%EC%84%9C%EB%B9%84%EC%8A%A4</p>]]></content><author><name>이승호</name></author><category term="ecosystem" /><category term="config" /></entry></feed>
