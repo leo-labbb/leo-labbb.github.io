@@ -88,4 +88,10 @@ var store = [{
         "tags": ["EC2","AWS","SSH"],
         "url": "/til/",
         "teaser": null
+      },{
+        "title": "AWS | EC2와 로드밸런서 연결하는 방법",
+        "excerpt":"서로 다른 EC2 인스턴스를 생성 후 ELB를 적용 EC2 인스턴스 생성 ELB에 연결할 2개의 EC2 인스턴스를 생성한다. 두 인스턴스의 서브넷(가용영역) 위치를 다르게 설정하기 ap-northeast-2a 서브넷으로 지정된 첫번째 인스턴스 ap-northeast-2c 서브넷으로 지정된 두번째 인스턴스 Load Balancer 적용 EC2 서비스페이지에서 좌측 메뉴 하단에 로드 밸런싱-&gt;로드밸러서를 클릭해서 접속한다. classic Load Balancer를 선택한다. 로드밸런서...","categories": [],
+        "tags": ["EC2","AWS","SSH","ELB"],
+        "url": "/til/",
+        "teaser": null
       }]

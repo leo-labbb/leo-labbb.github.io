@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>EC2 만들고 웹스톰에서 SSH 연결해서 레포 clone받는 방법 - leo-labbb DEVLOG</title>
+<!-- begin _includes/seo.html --><title>            AWS      EC2와 로드밸런서 연결하는 방법 - leo-labbb DEVLOG      </title>
 <meta name="description" content="awesome world">
 
 
@@ -22,7 +22,7 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="leo-labbb DEVLOG">
-<meta property="og:title" content="EC2 만들고 웹스톰에서 SSH 연결해서 레포 clone받는 방법">
+<meta property="og:title" content="            AWS      EC2와 로드밸런서 연결하는 방법      ">
 <meta property="og:url" content="http://localhost:4000/til/">
 
 
@@ -34,7 +34,7 @@
 
 
 
-  <meta property="article:published_time" content="2022-08-25T00:00:00+09:00">
+  <meta property="article:published_time" content="2022-08-30T00:00:00+09:00">
 
 
 
@@ -250,16 +250,23 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="EC2 만들고 웹스톰에서 SSH 연결해서 레포 clone받는 방법">
+    <meta itemprop="headline" content="            AWS      EC2와 로드밸런서 연결하는 방법      ">
     <meta itemprop="description" content="">
-    <meta itemprop="datePublished" content="2022-08-25T00:00:00+09:00">
+    <meta itemprop="datePublished" content="2022-08-30T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/til/" class="u-url" itemprop="url">EC2 만들고 웹스톰에서 SSH 연결해서 레포 clone받는 방법
+            <a href="http://localhost:4000/til/" class="u-url" itemprop="url"><table>
+  <tbody>
+    <tr>
+      <td>AWS</td>
+      <td>EC2와 로드밸런서 연결하는 방법</td>
+    </tr>
+  </tbody>
+</table>
 </a>
           </h1>
           
@@ -276,7 +283,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          less than 1 minute read
+          1 minute read
         
       </span>
     
@@ -288,57 +295,56 @@
 
       <section class="page__content e-content" itemprop="text">
         
-        <p>EC2 생성하고(t3.micro) 30Gb 설정 (pem파일 잘 저장해놓기)</p>
+        <p>서로 다른 EC2 인스턴스를 생성 후 ELB를 적용</p>
 
-<p>웹스톰</p>
+<ol>
+  <li>EC2 인스턴스 생성
+ELB에 연결할 2개의 EC2 인스턴스를 생성한다.
+두 인스턴스의 서브넷(가용영역) 위치를 다르게 설정하기</li>
+</ol>
 
-<ul>
-  <li>Tools - Start SSH session 클릭해서 edit</li>
-</ul>
+<p>ap-northeast-2a 서브넷으로 지정된 첫번째 인스턴스</p>
 
-<p>Host -&gt; EC2 퍼블릭 IPv4주소
-Username -&gt; 쓰고 싶은 이름
-Authentication type: Key pair</p>
+<p>ap-northeast-2c 서브넷으로 지정된 두번째 인스턴스</p>
 
-<ul>
-  <li>Tools - Deployment - Connection 클릭</li>
-</ul>
+<ol>
+  <li>Load Balancer 적용</li>
+</ol>
 
-<p>Type -&gt; SFTP
-SSH configuration -&gt; SSH session 네임 클릭
-Test Connection 해보고
-Root path는 /home/ubuntu 로 진행하면 된다.</p>
+<p>EC2 서비스페이지에서 좌측 메뉴 하단에 로드 밸런싱-&gt;로드밸러서를 클릭해서 접속한다.</p>
 
-<ul>
-  <li>우분투 접속 후 터미널에 차례대로 입력</li>
-</ul>
+<p>classic Load Balancer를 선택한다.</p>
 
-<p>sudo apt-get update</p>
+<p>로드밸런서 이름 -&gt; next
+보안 그룹 할당</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh</td>
-      <td>bash</td>
-    </tr>
-  </tbody>
-</table>
+<p>기존에 생성되어있는 보안 그룹을 할당시켜줬다.
+80 HTTP만 설정되어있으면 된다.
+상태검사 구성</p>
 
-<p>export NVM_DIR=”$HOME/.nvm”
-[ -s “$NVM_DIR/nvm.sh” ] &amp;&amp; . “$NVM_DIR/nvm.sh” # This loads nvm
-[ -s “$NVM_DIR/bash_completion” ] &amp;&amp; . “$NVM_DIR/bash_completion” # This loads nvm bash_completion</p>
+<p>로드밸런서에 연결할 인스턴스의 헬스체크와 관련된 설정이다.
+기본값으로 두고 넘어간다.
+인스턴스 추가</p>
 
-<p>nvm ls</p>
+<p>로드밸런서에 연결할 인스턴스를 선택해 준다.
+검토</p>
 
-<p>nvm install v14</p>
+<p>최종 확인해주기
+생성완료</p>
 
-<p>nvm use v14</p>
+<p>생성 완료 후 방금 생성한 로드밸런서를 클릭해 아래 인스턴스 탭을 눌러보면 상태가 OutOfService상태이다.
+지금은 방금 생성해서 OutOfService라고 나타나지만 이후에는 인스턴스가 사용 불가한 상태일때 OutOfservice라고 나타난다.</p>
 
-<p>sudo apt-get install nginx</p>
+<p>인스턴스가 사용가능하다면 위의 내용처럼 InService상태로 바뀐다.
+로드밸런서 적용 확인
+앞으로의 접속 요청은 인스턴스의 DNS주소가 아닌 로드밸런서의 DNS주소로 접근한다.</p>
 
-<p>sudo service nginx start</p>
+<p>로드밸런서의 DNS주소로 처음 접근시에는 위와같이 미리 인스턴스에 세팅해 두었던 Server2라는 문장을 출력하는 NGINX + NodeJS서버를 볼 수 있다.</p>
 
-<p>-&gt; 이 이후 깃헙 레포 HTTPS로 git clone! (8월 13일 에러뜨면 personal access token 생성 후 잘 저장해놓고 password로 사용해서 clone 받으면 된다!</p>
+<p>리로드를 할 때마다 다른 인스턴스에서 실행되고있는 Server1이라는 문장을 출력하는 NGINX + NodeJS서버를 볼 수 있다.
+계속 리로드를 할 시 Server1 과 Server2가 번갈아 표시되게된다.
+그러다가 더이상 번갈아 표시되지않을 경우가 생기는데 로그로 확인해 보았을 때 API요청이 캐싱되어 처리되는것을 확인할 수 있었다.
+2개의 EC2 인스턴스중에서 하나를 중지 시켰을 땐, Server1 혹은 Server2하나만 표시되는것을 알수 있었다.</p>
 
         
       </section>
@@ -359,6 +365,8 @@ Root path는 /home/ubuntu 로 진행하면 된다.</p>
     
       <a href="/tags/#ec2" class="page__taxonomy-item p-category" rel="tag">EC2</a><span class="sep">, </span>
     
+      <a href="/tags/#elb" class="page__taxonomy-item p-category" rel="tag">ELB</a><span class="sep">, </span>
+    
       <a href="/tags/#ssh" class="page__taxonomy-item p-category" rel="tag">SSH</a>
     
     </span>
@@ -369,7 +377,7 @@ Root path는 /home/ubuntu 로 진행하면 된다.</p>
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-08-25T00:00:00+09:00">August 25, 2022</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-08-30T00:00:00+09:00">August 30, 2022</time></p>
 
       </footer>
 
@@ -378,7 +386,7 @@ Root path는 /home/ubuntu 로 진행하면 된다.</p>
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=EC2+%EB%A7%8C%EB%93%A4%EA%B3%A0+%EC%9B%B9%EC%8A%A4%ED%86%B0%EC%97%90%EC%84%9C+SSH+%EC%97%B0%EA%B2%B0%ED%95%B4%EC%84%9C+%EB%A0%88%ED%8F%AC+clone%EB%B0%9B%EB%8A%94+%EB%B0%A9%EB%B2%95%20http%3A%2F%2Flocalhost%3A4000%2Ftil%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=AWS+%7C+EC2%EC%99%80+%EB%A1%9C%EB%93%9C%EB%B0%B8%EB%9F%B0%EC%84%9C+%EC%97%B0%EA%B2%B0%ED%95%98%EB%8A%94+%EB%B0%A9%EB%B2%95%20http%3A%2F%2Flocalhost%3A4000%2Ftil%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
   <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Ftil%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
@@ -389,7 +397,7 @@ Root path는 /home/ubuntu 로 진행하면 된다.</p>
       
   <nav class="pagination">
     
-      <a href="/til/" class="pagination--pager" title="mongo db 설치 방법 및 세팅
+      <a href="/til/" class="pagination--pager" title="EC2 만들고 웹스톰에서 SSH 연결해서 레포 clone받는 방법
 ">Previous</a>
     
     
@@ -407,6 +415,46 @@ Root path는 /home/ubuntu 로 진행하면 된다.</p>
     <div class="page__related">
       <h2 class="page__related-title">You may also enjoy</h2>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/" rel="permalink">EC2 만들고 웹스톰에서 SSH 연결해서 레포 clone받는 방법
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
         
           
 
@@ -523,46 +571,6 @@ Root path는 /home/ubuntu 로 진행하면 된다.</p>
 
 
     <p class="archive__item-excerpt" itemprop="description">
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/til/" rel="permalink">[REACT] 리액트 value 에러 / e.persist();
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          less than 1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">다시 만난 리액트
 </p>
   </article>
 </div>
