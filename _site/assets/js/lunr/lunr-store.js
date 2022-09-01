@@ -94,4 +94,10 @@ var store = [{
         "tags": ["EC2","AWS","SSH","ELB"],
         "url": "/til/",
         "teaser": null
+      },{
+        "title": "[ MongoDB ] 몽고DB 컬렉션 내 필드 전체에 update하는 방법",
+        "excerpt":"프로젝트를 진행하다가 기획이 수정되어 컬렉션 내 모든 곳에 필드를 추가할 일이 생겼다. 한 개를 변경하는 것은 updateOne으로 쉽게 했었는데 이번에 updateMany를 사용하게 되면서 일괄적으로 데이터를 추가하는 방법을 알아보자. updateMany의 인자는 총 3개이다. 첫번째 인자는 조회 조건을 가리킨다. 두번째 인자는 변경할 요소를 의미하고, $set 키워드를 사용하지 않는다면 작성한 내용으로 문서 전체가...","categories": [],
+        "tags": ["DB","MongoDB","updateMany"],
+        "url": "/til/",
+        "teaser": null
       }]

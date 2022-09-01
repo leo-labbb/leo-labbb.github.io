@@ -1,4 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-08-30T19:39:20+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">leo-labbb DEVLOG</title><subtitle>awesome world</subtitle><author><name>이승호</name></author><entry><title type="html">AWS | EC2와 로드밸런서 연결하는 방법</title><link href="http://localhost:4000/til/" rel="alternate" type="text/html" title="AWS | EC2와 로드밸런서 연결하는 방법" /><published>2022-08-30T00:00:00+09:00</published><updated>2022-08-30T00:00:00+09:00</updated><id>http://localhost:4000/til</id><content type="html" xml:base="http://localhost:4000/til/"><![CDATA[<p>서로 다른 EC2 인스턴스를 생성 후 ELB를 적용</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-09-01T20:14:24+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">leo-labbb DEVLOG</title><subtitle>awesome world</subtitle><author><name>이승호</name></author><entry><title type="html">[ MongoDB ] 몽고DB 컬렉션 내 필드 전체에 update하는 방법</title><link href="http://localhost:4000/til/" rel="alternate" type="text/html" title="[ MongoDB ] 몽고DB 컬렉션 내 필드 전체에 update하는 방법" /><published>2022-09-01T00:00:00+09:00</published><updated>2022-09-01T00:00:00+09:00</updated><id>http://localhost:4000/til</id><content type="html" xml:base="http://localhost:4000/til/"><![CDATA[<p>프로젝트를 진행하다가 기획이 수정되어 컬렉션 내 모든 곳에 필드를 추가할 일이 생겼다.</p>
+
+<p>한 개를 변경하는 것은 updateOne으로 쉽게 했었는데</p>
+
+<p>이번에 updateMany를 사용하게 되면서 일괄적으로 데이터를 추가하는 방법을 알아보자.</p>
+
+<p>updateMany의 인자는 총 3개이다.</p>
+
+<p>첫번째 인자는 조회 조건을 가리킨다.</p>
+
+<p>두번째 인자는 변경할 요소를 의미하고, $set 키워드를 사용하지 않는다면 작성한 내용으로 문서 전체가 변경된다.</p>
+
+<p>세번째 인자는 upsert 여부와 다중으로 모두 수정할 것인지를 선택하는 옵션이다.</p>
+
+<p>dbName.updateMany({ lastName: LEE }, { $set: { isPass: true}}, { multi: true } )
+이렇게 작성해주면 실제 DB에서 lastName이 LEE인 문서들은 모두 isPass: true로 변경되는 것을 확인할 수 있습니다.</p>]]></content><author><name>이승호</name></author><category term="DB" /><category term="MongoDB" /><category term="updateMany" /></entry><entry><title type="html">AWS | EC2와 로드밸런서 연결하는 방법</title><link href="http://localhost:4000/til/" rel="alternate" type="text/html" title="AWS | EC2와 로드밸런서 연결하는 방법" /><published>2022-08-30T00:00:00+09:00</published><updated>2022-08-30T00:00:00+09:00</updated><id>http://localhost:4000/til</id><content type="html" xml:base="http://localhost:4000/til/"><![CDATA[<p>서로 다른 EC2 인스턴스를 생성 후 ELB를 적용</p>
 
 <ol>
   <li>EC2 인스턴스 생성
@@ -501,17 +516,4 @@ npm i --save-dev eslint-config-prettier
 
 <p>그 후 나타나는 오류들은 fix ~~ 로 입맛에 맞게 수정해주면 eslint-airbnb를 적용해 나만의 eslint 규칙을 만들어 프로젝트를 일관되게 유지할 수 있습니다!</p>
 
-<p>만약 팀원들과 함께 하는 프로젝트라면 규칙을 자동 적용함으로써 조금 더 일관된 코드 스타일을 유지하며 프로젝트를 진행할 수 있을 것입니다 :)</p>]]></content><author><name>이승호</name></author><category term="eslint" /><category term="eslint-airbnb" /></entry><entry><title type="html">moment.js를 이용해 날짜 계산하는 방법</title><link href="http://localhost:4000/til/" rel="alternate" type="text/html" title="moment.js를 이용해 날짜 계산하는 방법" /><published>2022-07-10T00:00:00+09:00</published><updated>2022-07-10T00:00:00+09:00</updated><id>http://localhost:4000/til</id><content type="html" xml:base="http://localhost:4000/til/"><![CDATA[<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[Node.js] moment.js로 날짜(date)관련 작업을 쉽게하기
-</code></pre></div></div>
-
-<p><a href="https://hanswsw.tistory.com/5">https://hanswsw.tistory.com/5</a></p>
-
-<p>[[Node.js] moment.js로 날짜(date)관련 작업을 쉽게하기</p>
-
-<p>JS에서 날짜 관련 작업을 할 때, 아마 가장 유명하고 유용하게 사용되어지는 라이브러리는 moment.js가 아닐까 싶습니다. JS에 기본적으로 내장되어있는 Date개체를 불러와서, 날짜 관련 작업을 해</p>
-
-<p>hanswsw.tistory.com](https://hanswsw.tistory.com/5)</p>
-
-<h3 id="moment-날짜계산">[moment] 날짜계산</h3>
-
-<p><a href="https://romeoh.tistory.com/324">https://romeoh.tistory.com/324</a></p>]]></content><author><name>이승호</name></author><category term="moment js" /><category term="날짜계산" /></entry></feed>
+<p>만약 팀원들과 함께 하는 프로젝트라면 규칙을 자동 적용함으로써 조금 더 일관된 코드 스타일을 유지하며 프로젝트를 진행할 수 있을 것입니다 :)</p>]]></content><author><name>이승호</name></author><category term="eslint" /><category term="eslint-airbnb" /></entry></feed>
