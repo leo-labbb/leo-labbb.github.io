@@ -100,4 +100,10 @@ var store = [{
         "tags": ["DB","MongoDB","updateMany"],
         "url": "/til/",
         "teaser": null
+      },{
+        "title": "[ Jenkins ] 재시작 시 job 사라지는 문제",
+        "excerpt":"NodeJs 플러그인을 설치하고, 재시작을 했는데 job의 일부가 사라져버렸다. NodeJs 플러그인의 설치 버전과 Jenkins 버전이 맞아야 작동을 하는데 젠킨스를 업그레이드하면 job이 정상적으로 돌아오는 것을 볼 수 있다.   출처: https://programmingtilseungho.tistory.com/entry/Jenkins-재시작-시-job-사라지는-문제 [LEO Devlog:티스토리]  ","categories": [],
+        "tags": ["Jenkins","nodejs","Jenkins version"],
+        "url": "/til/",
+        "teaser": null
       }]

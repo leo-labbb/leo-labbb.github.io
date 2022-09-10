@@ -1,4 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-09-01T20:14:24+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">leo-labbb DEVLOG</title><subtitle>awesome world</subtitle><author><name>이승호</name></author><entry><title type="html">[ MongoDB ] 몽고DB 컬렉션 내 필드 전체에 update하는 방법</title><link href="http://localhost:4000/til/" rel="alternate" type="text/html" title="[ MongoDB ] 몽고DB 컬렉션 내 필드 전체에 update하는 방법" /><published>2022-09-01T00:00:00+09:00</published><updated>2022-09-01T00:00:00+09:00</updated><id>http://localhost:4000/til</id><content type="html" xml:base="http://localhost:4000/til/"><![CDATA[<p>프로젝트를 진행하다가 기획이 수정되어 컬렉션 내 모든 곳에 필드를 추가할 일이 생겼다.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-09-10T18:00:29+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">leo-labbb DEVLOG</title><subtitle>awesome world</subtitle><author><name>이승호</name></author><entry><title type="html">[ Jenkins ] 재시작 시 job 사라지는 문제</title><link href="http://localhost:4000/til/" rel="alternate" type="text/html" title="[ Jenkins ] 재시작 시 job 사라지는 문제" /><published>2022-09-10T00:00:00+09:00</published><updated>2022-09-10T00:00:00+09:00</updated><id>http://localhost:4000/til</id><content type="html" xml:base="http://localhost:4000/til/"><![CDATA[<p>NodeJs 플러그인을 설치하고, 재시작을 했는데 job의 일부가 사라져버렸다.
+NodeJs 플러그인의 설치 버전과 Jenkins 버전이 맞아야 작동을 하는데
+젠킨스를 업그레이드하면 job이 정상적으로 돌아오는 것을 볼 수 있다.</p>
+
+<p>출처: https://programmingtilseungho.tistory.com/entry/Jenkins-재시작-시-job-사라지는-문제 [LEO Devlog:티스토리]</p>]]></content><author><name>이승호</name></author><category term="Jenkins" /><category term="nodejs" /><category term="Jenkins version" /></entry><entry><title type="html">[ MongoDB ] 몽고DB 컬렉션 내 필드 전체에 update하는 방법</title><link href="http://localhost:4000/til/" rel="alternate" type="text/html" title="[ MongoDB ] 몽고DB 컬렉션 내 필드 전체에 update하는 방법" /><published>2022-09-01T00:00:00+09:00</published><updated>2022-09-01T00:00:00+09:00</updated><id>http://localhost:4000/til</id><content type="html" xml:base="http://localhost:4000/til/"><![CDATA[<p>프로젝트를 진행하다가 기획이 수정되어 컬렉션 내 모든 곳에 필드를 추가할 일이 생겼다.</p>
 
 <p>한 개를 변경하는 것은 updateOne으로 쉽게 했었는데</p>
 
@@ -480,40 +484,4 @@ But, Web Server 소프트웨어 입장에선 제한하지 않을 경우의 리�
 
 <ul>
   <li>소스 수정,편집 내용으로 이동하기</li>
-</ul>]]></content><author><name>이승호</name></author><category term="webstorm" /><category term="webstorm 단축키" /><summary type="html"><![CDATA[까먹었을 때 다시 보는 용도]]></summary></entry><entry><title type="html">프로젝트에 eslint-airbnb 적용해 나만의 eslint 규칙 만들기</title><link href="http://localhost:4000/til/" rel="alternate" type="text/html" title="프로젝트에 eslint-airbnb 적용해 나만의 eslint 규칙 만들기" /><published>2022-07-15T00:00:00+09:00</published><updated>2022-07-15T00:00:00+09:00</updated><id>http://localhost:4000/til</id><content type="html" xml:base="http://localhost:4000/til/"><![CDATA[<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm i --save-dev eslint-config-airbnb-base eslint-plugin-import
-npm i --save-dev eslint-config-prettier
-</code></pre></div></div>
-
-<p>우선 npm i를 이용해 위와 같이 eslint-airbnb와 config-prettier를 설치해줍니다.</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>module.exports = {
-  env: {
-    commonjs: true,
-    es2021: true,
-    node: true,
-  },
-  extends: ["airbnb-base", "prettier"],
-  parserOptions: {
-    ecmaVersion: 12,
-  },
-  rules: {
-    "new-cap": 0,
-    "max-len": 0,
-    "valid-jsdoc": 0,
-    "require-jsdoc": 1,
-    "no-unused-vars": 1,
-    "no-trailing-spaces": 0,
-    "no-undef": 0,
-    "spaced-comment": 0,
-    "prefer-const": 0,
-  },
-};
-</code></pre></div></div>
-
-<p>그 다음 .eslintrc.js 파일을 최상단에 위치시켜 생성해주고,</p>
-
-<p>위 파일과 같이 입력해줍니다.</p>
-
-<p>그 후 나타나는 오류들은 fix ~~ 로 입맛에 맞게 수정해주면 eslint-airbnb를 적용해 나만의 eslint 규칙을 만들어 프로젝트를 일관되게 유지할 수 있습니다!</p>
-
-<p>만약 팀원들과 함께 하는 프로젝트라면 규칙을 자동 적용함으로써 조금 더 일관된 코드 스타일을 유지하며 프로젝트를 진행할 수 있을 것입니다 :)</p>]]></content><author><name>이승호</name></author><category term="eslint" /><category term="eslint-airbnb" /></entry></feed>
+</ul>]]></content><author><name>이승호</name></author><category term="webstorm" /><category term="webstorm 단축키" /><summary type="html"><![CDATA[까먹었을 때 다시 보는 용도]]></summary></entry></feed>
