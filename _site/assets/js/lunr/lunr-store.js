@@ -106,4 +106,10 @@ var store = [{
         "tags": ["Jenkins","nodejs","Jenkins version"],
         "url": "/til/",
         "teaser": null
+      },{
+        "title": "[ MongoDB ] mongoose 배열 값 추가, 삭제",
+        "excerpt":"   type이 배열인 필드에 값 추가하기 ($push)   // 해당 날짜 데이터에 userIp 추가해주기   await findTodayData.updateOne({ \t$push: { \t\tcount: userIp, \t}, });      type이 배열인 필드에 값 삭제하기   // 해당 날짜 데이터에 userIp 제거하기 await findTodayData.updateOne({ \t$pull: { \t\tcount: userIp, \t}, }); // 혹은 pullAll로 해당 값을 삭제해줄 수도 있다.  ","categories": [],
+        "tags": ["mongodb","database","mongoose"],
+        "url": "/til/",
+        "teaser": null
       }]

@@ -1,0 +1,25 @@
+I"�<ul>
+  <li>type이 배열인 필드에 값 추가하기 ($push)</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 해당 날짜 데이터에 userIp 추가해주기
+  await findTodayData.updateOne({
+	$push: {
+		count: userIp,
+	},
+});
+</code></pre></div></div>
+
+<ul>
+  <li>type이 배열인 필드에 값 삭제하기</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 해당 날짜 데이터에 userIp 제거하기
+await findTodayData.updateOne({
+	$pull: {
+		count: userIp,
+	},
+});
+// 혹은 pullAll로 해당 값을 삭제해줄 수도 있다.
+</code></pre></div></div>
+:ET
